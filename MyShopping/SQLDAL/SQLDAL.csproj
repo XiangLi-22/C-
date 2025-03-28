@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DayCastDAL.cs" />
+    <Compile Include="MothCastDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -73,10 +74,6 @@
     <ProjectReference Include="..\IDAL\IDAL.csproj">
       <Project>{f9935b5c-e931-427a-a854-5298ee095157}</Project>
       <Name>IDAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Model\Model.csproj">
-      <Project>{0101de2c-129c-47b5-a0dc-e1927a77e483}</Project>
-      <Name>Model</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

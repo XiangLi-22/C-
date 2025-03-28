@@ -57,6 +57,14 @@
     <Compile Include="Migrations\202503251330316_Init.Designer.cs">
       <DependentUpon>202503251330316_Init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202503280931018_update-userinfo.cs" />
+    <Compile Include="Migrations\202503280931018_update-userinfo.Designer.cs">
+      <DependentUpon>202503280931018_update-userinfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202503281213447_update-userinfo11.cs" />
+    <Compile Include="Migrations\202503281213447_update-userinfo11.Designer.cs">
+      <DependentUpon>202503281213447_update-userinfo11.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MothCastInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -69,6 +77,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202503251330316_Init.resx">
       <DependentUpon>202503251330316_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202503280931018_update-userinfo.resx">
+      <DependentUpon>202503280931018_update-userinfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202503281213447_update-userinfo11.resx">
+      <DependentUpon>202503281213447_update-userinfo11.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

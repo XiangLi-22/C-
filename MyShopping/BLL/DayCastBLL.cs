@@ -21,16 +21,21 @@ namespace BLL
             m.GoodsType = model.GoodsType;
             m.GoodsPrice = model.GoodsPrice;
             m.CurrentTime = model.CurrentTime == null ? DateTime.Now : model.CurrentTime;
-            if (dayCastDAL.GetLastDayCost().CurrentTime.Month == m.CurrentTime.Month
-                && dayCastDAL.GetLastDayCost().CurrentTime.Day == m.CurrentTime.Day)
+            if (dayCastDAL.GetLastDayCost()!=null && 
+                dayCastDAL.GetLastDayCost().CurrentTime.Month == m.CurrentTime.Month && 
+                dayCastDAL.GetLastDayCost().CurrentTime.Day == m.CurrentTime.Day)
                 m.DaysCast = dayCastDAL.GetLastDayCost().DaysCast + model.GoodsPrice;
             else m.DaysCast = model.GoodsPrice;
-            m.TotalRemain = dayCastDAL.GetLastDayCost().TotalRemain - model.GoodsPrice;
+            m.TotalRemain = dayCastDAL.GetLastDayCost()==null?1500:dayCastDAL.GetLastDayCost().TotalRemain - model.GoodsPrice;
 
             if (!dayCastDAL.Add(m))
             {
                 message = "添加失败!";
             }
+
+            MothCastBLL mothCastBLL = new MothCastBLL();
+            mothCastBLL.MothAdd(m.GoodsType, m.GoodsPrice);
+
             message = "添加成功!";
         }
 
@@ -40,6 +45,8 @@ namespace BLL
         /// <returns></returns>
         public float GetLastRemainMoney()
         {
+            if(dayCastDAL.GetLastDayCost()==null) return 1500;
+
             return dayCastDAL.GetLastDayCost().TotalRemain;
         }
     }

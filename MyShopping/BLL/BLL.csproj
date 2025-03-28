@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DayCastBLL.cs" />
+    <Compile Include="MothCastBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -60,13 +61,13 @@
       <Project>{b5ef1761-71d1-4420-8c9e-66fbdb8712af}</Project>
       <Name>Domains</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Hepler\Helper.csproj">
+      <Project>{768507C1-A666-4105-8481-A43D7492144B}</Project>
+      <Name>Helper</Name>
+    </ProjectReference>
     <ProjectReference Include="..\IDAL\IDAL.csproj">
       <Project>{f9935b5c-e931-427a-a854-5298ee095157}</Project>
       <Name>IDAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Model\Model.csproj">
-      <Project>{0101de2c-129c-47b5-a0dc-e1927a77e483}</Project>
-      <Name>Model</Name>
     </ProjectReference>
     <ProjectReference Include="..\SQLDAL\SQLDAL.csproj">
       <Project>{a71129b2-ba03-4477-ac33-01b4a638b02c}</Project>

@@ -134,6 +134,9 @@
     <EmbeddedResource Include="DetailFrm\DayCostFrm.resx">
       <DependentUpon>DayCostFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DetailFrm\MothCostFrm.resx">
+      <DependentUpon>MothCostFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainFrm.resx">
       <DependentUpon>MainFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -189,10 +192,6 @@
     <ProjectReference Include="..\IDAL\IDAL.csproj">
       <Project>{f9935b5c-e931-427a-a854-5298ee095157}</Project>
       <Name>IDAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Model\Model.csproj">
-      <Project>{0101de2c-129c-47b5-a0dc-e1927a77e483}</Project>
-      <Name>Model</Name>
     </ProjectReference>
     <ProjectReference Include="..\SQLDAL\SQLDAL.csproj">
       <Project>{a71129b2-ba03-4477-ac33-01b4a638b02c}</Project>

@@ -15,11 +15,9 @@ D:\上位机正式课\MyShopping\IDAL\obj\Debug\IDAL.pdb
 D:\上位机正式课\MyShopping1\MyShopping\IDAL\bin\Debug\IDAL.dll
 D:\上位机正式课\MyShopping1\MyShopping\IDAL\bin\Debug\IDAL.pdb
 D:\上位机正式课\MyShopping1\MyShopping\IDAL\bin\Debug\Domains.dll
-D:\上位机正式课\MyShopping1\MyShopping\IDAL\bin\Debug\Model.dll
 D:\上位机正式课\MyShopping1\MyShopping\IDAL\bin\Debug\EntityFramework.dll
 D:\上位机正式课\MyShopping1\MyShopping\IDAL\bin\Debug\Domains.pdb
 D:\上位机正式课\MyShopping1\MyShopping\IDAL\bin\Debug\Domains.dll.config
-D:\上位机正式课\MyShopping1\MyShopping\IDAL\bin\Debug\Model.pdb
 D:\上位机正式课\MyShopping1\MyShopping\IDAL\bin\Debug\EntityFramework.xml
 D:\上位机正式课\MyShopping1\MyShopping\IDAL\obj\Debug\IDAL.csproj.AssemblyReference.cache
 D:\上位机正式课\MyShopping1\MyShopping\IDAL\obj\Debug\IDAL.csproj.CoreCompileInputs.cache

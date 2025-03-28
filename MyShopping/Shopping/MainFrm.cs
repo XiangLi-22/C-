@@ -48,9 +48,9 @@ namespace Shopping
             var model = new DayCastInfo()
             {
                 GoodsName = "午餐",
-                GoodsType = 1,
+                GoodsType = Convert.ToInt32(textBox1.Text),
                 GoodsPrice = 10,
-                CurrentTime = DateTime.Parse("2025.3.26")
+                //CurrentTime = DateTime.Parse("2025.3.26")
             };
             dayCastBLL.Add(model, out message);
             money = money + model.GoodsPrice;

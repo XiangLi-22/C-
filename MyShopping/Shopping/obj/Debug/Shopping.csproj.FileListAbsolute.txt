@@ -49,7 +49,6 @@ D:\上位机正式课\MyShopping1\MyShopping\Shopping\bin\Debug\Domains.dll
 D:\上位机正式课\MyShopping1\MyShopping\Shopping\bin\Debug\HZH_Controls.dll
 D:\上位机正式课\MyShopping1\MyShopping\Shopping\bin\Debug\IDAL.dll
 D:\上位机正式课\MyShopping1\MyShopping\Shopping\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
-D:\上位机正式课\MyShopping1\MyShopping\Shopping\bin\Debug\Model.dll
 D:\上位机正式课\MyShopping1\MyShopping\Shopping\bin\Debug\SQLDAL.dll
 D:\上位机正式课\MyShopping1\MyShopping\Shopping\bin\Debug\SQLFactory.dll
 D:\上位机正式课\MyShopping1\MyShopping\Shopping\bin\Debug\SunnyUI.Common.dll
@@ -62,7 +61,6 @@ D:\上位机正式课\MyShopping1\MyShopping\Shopping\bin\Debug\BLL.dll.config
 D:\上位机正式课\MyShopping1\MyShopping\Shopping\bin\Debug\Domains.pdb
 D:\上位机正式课\MyShopping1\MyShopping\Shopping\bin\Debug\Domains.dll.config
 D:\上位机正式课\MyShopping1\MyShopping\Shopping\bin\Debug\IDAL.pdb
-D:\上位机正式课\MyShopping1\MyShopping\Shopping\bin\Debug\Model.pdb
 D:\上位机正式课\MyShopping1\MyShopping\Shopping\bin\Debug\SQLDAL.pdb
 D:\上位机正式课\MyShopping1\MyShopping\Shopping\bin\Debug\SQLDAL.dll.config
 D:\上位机正式课\MyShopping1\MyShopping\Shopping\bin\Debug\SQLFactory.pdb
@@ -87,3 +85,4 @@ D:\上位机正式课\MyShopping1\MyShopping\Shopping\bin\Debug\EntityFramework.
 D:\上位机正式课\MyShopping1\MyShopping\Shopping\obj\Debug\Shopping.MyUserContorl.DelectButton.resources
 D:\上位机正式课\MyShopping1\MyShopping\Shopping\bin\Debug\Hepler.dll
 D:\上位机正式课\MyShopping1\MyShopping\Shopping\bin\Debug\Hepler.pdb
+D:\上位机正式课\MyShopping1\MyShopping\Shopping\obj\Debug\Shopping.DetailImage.MothCostFrm.resources
