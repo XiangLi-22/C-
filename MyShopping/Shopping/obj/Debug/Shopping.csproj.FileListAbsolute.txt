@@ -85,3 +85,5 @@ D:\上位机正式课\MyShopping1\MyShopping\Shopping\obj\Debug\Shopping.pdb
 D:\上位机正式课\MyShopping1\MyShopping\Shopping\bin\Debug\EntityFramework.SqlServer.dll
 D:\上位机正式课\MyShopping1\MyShopping\Shopping\bin\Debug\EntityFramework.SqlServer.xml
 D:\上位机正式课\MyShopping1\MyShopping\Shopping\obj\Debug\Shopping.MyUserContorl.DelectButton.resources
+D:\上位机正式课\MyShopping1\MyShopping\Shopping\bin\Debug\Hepler.dll
+D:\上位机正式课\MyShopping1\MyShopping\Shopping\bin\Debug\Hepler.pdb

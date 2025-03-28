@@ -3,24 +3,12 @@
   "WorkspaceRootPath": "D:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\MyShopping1\\MyShopping\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7703BA7E-B793-42C4-AF3B-A84B77642AE9}|Shopping\\Shopping.csproj|d:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\myshopping1\\myshopping\\shopping\\detailfrm\\daycostfrm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{768507C1-A666-4105-8481-A43D7492144B}|Hepler\\Helper.csproj|d:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\myshopping1\\myshopping\\hepler\\goodstype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{768507C1-A666-4105-8481-A43D7492144B}|Hepler\\Helper.csproj|solutionrelative:hepler\\goodstype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7703BA7E-B793-42C4-AF3B-A84B77642AE9}|Shopping\\Shopping.csproj|D:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\MyShopping1\\MyShopping\\shopping\\detailfrm\\daycostfrm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7703BA7E-B793-42C4-AF3B-A84B77642AE9}|Shopping\\Shopping.csproj|solutionrelative:shopping\\detailfrm\\daycostfrm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7703BA7E-B793-42C4-AF3B-A84B77642AE9}|Shopping\\Shopping.csproj|D:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\MyShopping1\\MyShopping\\shopping\\myusercontorl\\delectbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{7703BA7E-B793-42C4-AF3B-A84B77642AE9}|Shopping\\Shopping.csproj|solutionrelative:shopping\\myusercontorl\\delectbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7703BA7E-B793-42C4-AF3B-A84B77642AE9}|Shopping\\Shopping.csproj|D:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\MyShopping1\\MyShopping\\shopping\\myusercontorl\\delectbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7703BA7E-B793-42C4-AF3B-A84B77642AE9}|Shopping\\Shopping.csproj|solutionrelative:shopping\\myusercontorl\\delectbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7703BA7E-B793-42C4-AF3B-A84B77642AE9}|Shopping\\Shopping.csproj|D:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\MyShopping1\\MyShopping\\shopping\\detailfrm\\daycostfrm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{7703BA7E-B793-42C4-AF3B-A84B77642AE9}|Shopping\\Shopping.csproj|solutionrelative:shopping\\detailfrm\\daycostfrm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7703BA7E-B793-42C4-AF3B-A84B77642AE9}|Shopping\\Shopping.csproj|D:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\MyShopping1\\MyShopping\\shopping\\dto\\daydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7703BA7E-B793-42C4-AF3B-A84B77642AE9}|Shopping\\Shopping.csproj|solutionrelative:shopping\\dto\\daydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,62 +42,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DelectButton.cs",
-              "DocumentMoniker": "D:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\MyShopping1\\MyShopping\\Shopping\\MyUserContorl\\DelectButton.cs",
-              "RelativeDocumentMoniker": "Shopping\\MyUserContorl\\DelectButton.cs",
-              "ToolTip": "D:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\MyShopping1\\MyShopping\\Shopping\\MyUserContorl\\DelectButton.cs",
-              "RelativeToolTip": "Shopping\\MyUserContorl\\DelectButton.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAnwBwAAAAlAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "GoodsType.cs",
+              "DocumentMoniker": "D:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\MyShopping1\\MyShopping\\Hepler\\GoodsType.cs",
+              "RelativeDocumentMoniker": "Hepler\\GoodsType.cs",
+              "ToolTip": "D:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\MyShopping1\\MyShopping\\Hepler\\GoodsType.cs",
+              "RelativeToolTip": "Hepler\\GoodsType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-27T13:36:44.26Z"
+              "WhenOpened": "2025-03-28T06:15:55.292Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "DelectButton.cs [\u8BBE\u8BA1]",
-              "DocumentMoniker": "D:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\MyShopping1\\MyShopping\\Shopping\\MyUserContorl\\DelectButton.cs",
-              "RelativeDocumentMoniker": "Shopping\\MyUserContorl\\DelectButton.cs",
-              "ToolTip": "D:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\MyShopping1\\MyShopping\\Shopping\\MyUserContorl\\DelectButton.cs [\u8BBE\u8BA1]",
-              "RelativeToolTip": "Shopping\\MyUserContorl\\DelectButton.cs [\u8BBE\u8BA1]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-27T13:17:07.661Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "DayDTO.cs",
-              "DocumentMoniker": "D:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\MyShopping1\\MyShopping\\Shopping\\DTO\\DayDTO.cs",
-              "RelativeDocumentMoniker": "Shopping\\DTO\\DayDTO.cs",
-              "ToolTip": "D:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\MyShopping1\\MyShopping\\Shopping\\DTO\\DayDTO.cs",
-              "RelativeToolTip": "Shopping\\DTO\\DayDTO.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAUwBkAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-27T11:49:27.226Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "DayCostFrm.cs",
               "DocumentMoniker": "D:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\MyShopping1\\MyShopping\\Shopping\\DetailFrm\\DayCostFrm.cs",
               "RelativeDocumentMoniker": "Shopping\\DetailFrm\\DayCostFrm.cs",
               "ToolTip": "D:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\MyShopping1\\MyShopping\\Shopping\\DetailFrm\\DayCostFrm.cs",
               "RelativeToolTip": "Shopping\\DetailFrm\\DayCostFrm.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAAxwEUAAAAzAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFgAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-27T09:54:03.386Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DayCostFrm.cs [\u8BBE\u8BA1]",
-              "DocumentMoniker": "D:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\MyShopping1\\MyShopping\\Shopping\\DetailFrm\\DayCostFrm.cs",
-              "RelativeDocumentMoniker": "Shopping\\DetailFrm\\DayCostFrm.cs",
-              "ToolTip": "D:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\MyShopping1\\MyShopping\\Shopping\\DetailFrm\\DayCostFrm.cs [\u8BBE\u8BA1]",
-              "RelativeToolTip": "Shopping\\DetailFrm\\DayCostFrm.cs [\u8BBE\u8BA1]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-27T09:53:55.321Z"
             }
           ]
         }

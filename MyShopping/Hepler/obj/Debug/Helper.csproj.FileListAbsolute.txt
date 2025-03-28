@@ -1,0 +1,6 @@
+D:\上位机正式课\MyShopping1\MyShopping\Hepler\bin\Debug\Hepler.dll
+D:\上位机正式课\MyShopping1\MyShopping\Hepler\bin\Debug\Hepler.pdb
+D:\上位机正式课\MyShopping1\MyShopping\Hepler\obj\Debug\Helper.csproj.AssemblyReference.cache
+D:\上位机正式课\MyShopping1\MyShopping\Hepler\obj\Debug\Helper.csproj.CoreCompileInputs.cache
+D:\上位机正式课\MyShopping1\MyShopping\Hepler\obj\Debug\Hepler.dll
+D:\上位机正式课\MyShopping1\MyShopping\Hepler\obj\Debug\Hepler.pdb

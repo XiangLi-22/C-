@@ -34,9 +34,9 @@
             // 
             // btnUpd
             // 
-            this.btnUpd.Location = new System.Drawing.Point(2, 2);
+            this.btnUpd.Location = new System.Drawing.Point(3, 3);
             this.btnUpd.Name = "btnUpd";
-            this.btnUpd.Size = new System.Drawing.Size(75, 30);
+            this.btnUpd.Size = new System.Drawing.Size(48, 25);
             this.btnUpd.TabIndex = 0;
             this.btnUpd.Text = "编辑";
             this.btnUpd.UseVisualStyleBackColor = true;
@@ -44,11 +44,11 @@
             // 
             // btnRef
             // 
-            this.btnRef.Location = new System.Drawing.Point(83, 2);
+            this.btnRef.Location = new System.Drawing.Point(52, 3);
             this.btnRef.Name = "btnRef";
-            this.btnRef.Size = new System.Drawing.Size(75, 30);
+            this.btnRef.Size = new System.Drawing.Size(48, 25);
             this.btnRef.TabIndex = 1;
-            this.btnRef.Text = "已退款";
+            this.btnRef.Text = "退款";
             this.btnRef.UseVisualStyleBackColor = true;
             this.btnRef.Click += new System.EventHandler(this.btnRef_Click);
             // 
@@ -56,10 +56,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.btnRef);
             this.Controls.Add(this.btnUpd);
             this.Name = "DelectButton";
-            this.Size = new System.Drawing.Size(160, 35);
+            this.Size = new System.Drawing.Size(103, 30);
             this.ResumeLayout(false);
 
         }

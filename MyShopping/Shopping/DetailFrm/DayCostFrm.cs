@@ -1,6 +1,8 @@
 ﻿using Domains;
 using Domains.Context;
+using Helper;
 using Shopping.DTO;
+using Shopping.MyUserContorl;
 using Sunny.UI;
 using System;
 using System.Data;
@@ -47,6 +49,7 @@ namespace Shopping.DetailImage
                         orderby d.CurrentTime ascending
                         select new DayDTO()
                         {
+                            Id = d.Id,
                             GoodsName = d.GoodsName,
                             GoodsType = (GoodsType)d.GoodsType,
                             GoodsPrice = d.GoodsPrice,
@@ -68,6 +71,31 @@ namespace Shopping.DetailImage
             uiDataGridView1.Columns[7].HeaderText = "是否退款";
             if (!uiDataGridView1.Columns.Contains("操作")) uiDataGridView1.Columns.Add("operate", "操作");
             //封装一个方法 , 获取全部行,循环行数在单元格中进行添加自定义用户控件(即实例化),当定点击事件
+
+            BindGridViewButton();
+
+            if (query.Count() == 0) MessageBox.Show("你还没有添加当日消费记录!");
+        }
+
+        private void BindGridViewButton()
+        {
+            var binder = new DataGridViewButtonBinder<DelectButton>(uiDataGridView1, "operate", row =>
+            {
+                var button = new DelectButton();
+                int id = Convert.ToInt32(row.Cells["Id"].Value);
+
+                button.btnRefClicked += (s, e) =>
+                {
+                    MessageBox.Show("退款按钮点击");
+                };
+                button.btnUpdClicked += (s, e) =>
+                {
+                    MessageBox.Show($"编辑按钮点击，ID: {id}");
+                };
+                return button;
+            });
+
+            binder.BindButtons();
         }
 
         #region 美化页面
