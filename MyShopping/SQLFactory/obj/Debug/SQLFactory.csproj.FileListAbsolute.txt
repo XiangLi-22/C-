@@ -1,0 +1,12 @@
+D:\上位机正式课\MyShopping\SQLFactory\bin\Debug\SQLFactory.dll
+D:\上位机正式课\MyShopping\SQLFactory\bin\Debug\SQLFactory.pdb
+D:\上位机正式课\MyShopping\SQLFactory\obj\Debug\SQLFactory.csproj.AssemblyReference.cache
+D:\上位机正式课\MyShopping\SQLFactory\obj\Debug\SQLFactory.csproj.CoreCompileInputs.cache
+D:\上位机正式课\MyShopping\SQLFactory\obj\Debug\SQLFactory.dll
+D:\上位机正式课\MyShopping\SQLFactory\obj\Debug\SQLFactory.pdb
+D:\上位机正式课\MyShopping1\MyShopping\SQLFactory\bin\Debug\SQLFactory.dll
+D:\上位机正式课\MyShopping1\MyShopping\SQLFactory\bin\Debug\SQLFactory.pdb
+D:\上位机正式课\MyShopping1\MyShopping\SQLFactory\obj\Debug\SQLFactory.csproj.AssemblyReference.cache
+D:\上位机正式课\MyShopping1\MyShopping\SQLFactory\obj\Debug\SQLFactory.csproj.CoreCompileInputs.cache
+D:\上位机正式课\MyShopping1\MyShopping\SQLFactory\obj\Debug\SQLFactory.dll
+D:\上位机正式课\MyShopping1\MyShopping\SQLFactory\obj\Debug\SQLFactory.pdb
