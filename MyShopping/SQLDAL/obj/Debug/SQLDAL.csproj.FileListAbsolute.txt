@@ -46,3 +46,5 @@ D:\上位机正式课\MyShopping1\MyShopping\SQLDAL\obj\Debug\SQLDAL.csproj.Core
 D:\上位机正式课\MyShopping1\MyShopping\SQLDAL\obj\Debug\SQLDAL.csproj.Up2Date
 D:\上位机正式课\MyShopping1\MyShopping\SQLDAL\obj\Debug\SQLDAL.dll
 D:\上位机正式课\MyShopping1\MyShopping\SQLDAL\obj\Debug\SQLDAL.pdb
+D:\上位机正式课\MyShopping1\MyShopping\SQLDAL\bin\Debug\Hepler.dll
+D:\上位机正式课\MyShopping1\MyShopping\SQLDAL\bin\Debug\Hepler.pdb

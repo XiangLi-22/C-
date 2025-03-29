@@ -30,20 +30,20 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.uiGroupBox1 = new Sunny.UI.UIGroupBox();
+            this.lbShowType = new Sunny.UI.UIListBox();
+            this.btnGoType = new Sunny.UI.UIButton();
+            this.uiLabel2 = new Sunny.UI.UILabel();
+            this.uiLabel1 = new Sunny.UI.UILabel();
+            this.btnGoTime = new Sunny.UI.UIButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.uPieChart = new Sunny.UI.UIPieChart();
-            this.btnGoTime = new Sunny.UI.UIButton();
-            this.btnGoType = new Sunny.UI.UIButton();
-            this.uiGroupBox1 = new Sunny.UI.UIGroupBox();
-            this.uiLabel1 = new Sunny.UI.UILabel();
-            this.dtpSelTime = new Sunny.UI.UIDatetimePicker();
-            this.uiLabel2 = new Sunny.UI.UILabel();
-            this.lbShowType = new Sunny.UI.UIListBox();
+            this.dtpSelTime = new Sunny.UI.UIDatePicker();
             this.returnButon1 = new Shopping.MyUserContorl.ReturnButon();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.uiGroupBox1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -66,6 +66,97 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(355, 553);
             this.panel2.TabIndex = 1;
+            // 
+            // uiGroupBox1
+            // 
+            this.uiGroupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.uiGroupBox1.Controls.Add(this.dtpSelTime);
+            this.uiGroupBox1.Controls.Add(this.lbShowType);
+            this.uiGroupBox1.Controls.Add(this.btnGoType);
+            this.uiGroupBox1.Controls.Add(this.uiLabel2);
+            this.uiGroupBox1.Controls.Add(this.uiLabel1);
+            this.uiGroupBox1.Controls.Add(this.btnGoTime);
+            this.uiGroupBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.uiGroupBox1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.uiGroupBox1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiGroupBox1.Location = new System.Drawing.Point(4, 0);
+            this.uiGroupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiGroupBox1.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiGroupBox1.Name = "uiGroupBox1";
+            this.uiGroupBox1.Padding = new System.Windows.Forms.Padding(0, 32, 0, 0);
+            this.uiGroupBox1.Size = new System.Drawing.Size(344, 548);
+            this.uiGroupBox1.TabIndex = 0;
+            this.uiGroupBox1.Text = "查询条件";
+            this.uiGroupBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lbShowType
+            // 
+            this.lbShowType.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbShowType.FillColor = System.Drawing.Color.White;
+            this.lbShowType.FillColor2 = System.Drawing.Color.White;
+            this.lbShowType.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbShowType.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
+            this.lbShowType.ItemSelectForeColor = System.Drawing.Color.White;
+            this.lbShowType.Location = new System.Drawing.Point(71, 142);
+            this.lbShowType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lbShowType.MinimumSize = new System.Drawing.Size(1, 1);
+            this.lbShowType.Name = "lbShowType";
+            this.lbShowType.Padding = new System.Windows.Forms.Padding(2);
+            this.lbShowType.ShowText = false;
+            this.lbShowType.Size = new System.Drawing.Size(251, 351);
+            this.lbShowType.TabIndex = 7;
+            this.lbShowType.Text = "uiListBox1";
+            // 
+            // btnGoType
+            // 
+            this.btnGoType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGoType.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGoType.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnGoType.Location = new System.Drawing.Point(222, 506);
+            this.btnGoType.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnGoType.Name = "btnGoType";
+            this.btnGoType.Size = new System.Drawing.Size(100, 35);
+            this.btnGoType.TabIndex = 2;
+            this.btnGoType.Text = "uiButton2";
+            this.btnGoType.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnGoType.Click += new System.EventHandler(this.btnGoType_Click);
+            // 
+            // uiLabel2
+            // 
+            this.uiLabel2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.uiLabel2.Location = new System.Drawing.Point(8, 143);
+            this.uiLabel2.Name = "uiLabel2";
+            this.uiLabel2.Size = new System.Drawing.Size(72, 23);
+            this.uiLabel2.TabIndex = 4;
+            this.uiLabel2.Text = "类型:";
+            // 
+            // uiLabel1
+            // 
+            this.uiLabel1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.uiLabel1.Location = new System.Drawing.Point(8, 52);
+            this.uiLabel1.Name = "uiLabel1";
+            this.uiLabel1.Size = new System.Drawing.Size(72, 23);
+            this.uiLabel1.TabIndex = 0;
+            this.uiLabel1.Text = "日期:";
+            // 
+            // btnGoTime
+            // 
+            this.btnGoTime.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGoTime.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnGoTime.Location = new System.Drawing.Point(222, 94);
+            this.btnGoTime.MinimumSize = new System.Drawing.Size(1, 1);
+            this.btnGoTime.Name = "btnGoTime";
+            this.btnGoTime.Size = new System.Drawing.Size(100, 35);
+            this.btnGoTime.TabIndex = 1;
+            this.btnGoTime.Text = "uiButton1";
+            this.btnGoTime.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnGoTime.Click += new System.EventHandler(this.btnGoTime_Click);
             // 
             // panel3
             // 
@@ -93,117 +184,26 @@
             this.uPieChart.TabIndex = 0;
             this.uPieChart.Text = "uiPieChart1";
             // 
-            // btnGoTime
-            // 
-            this.btnGoTime.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGoTime.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnGoTime.Location = new System.Drawing.Point(241, 52);
-            this.btnGoTime.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnGoTime.Name = "btnGoTime";
-            this.btnGoTime.Size = new System.Drawing.Size(100, 35);
-            this.btnGoTime.TabIndex = 1;
-            this.btnGoTime.Text = "uiButton1";
-            this.btnGoTime.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnGoTime.Click += new System.EventHandler(this.btnGoTime_Click);
-            // 
-            // btnGoType
-            // 
-            this.btnGoType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGoType.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGoType.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnGoType.Location = new System.Drawing.Point(241, 491);
-            this.btnGoType.MinimumSize = new System.Drawing.Size(1, 1);
-            this.btnGoType.Name = "btnGoType";
-            this.btnGoType.Size = new System.Drawing.Size(100, 35);
-            this.btnGoType.TabIndex = 2;
-            this.btnGoType.Text = "uiButton2";
-            this.btnGoType.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnGoType.Click += new System.EventHandler(this.btnGoType_Click);
-            // 
-            // uiGroupBox1
-            // 
-            this.uiGroupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.uiGroupBox1.Controls.Add(this.lbShowType);
-            this.uiGroupBox1.Controls.Add(this.btnGoType);
-            this.uiGroupBox1.Controls.Add(this.uiLabel2);
-            this.uiGroupBox1.Controls.Add(this.dtpSelTime);
-            this.uiGroupBox1.Controls.Add(this.uiLabel1);
-            this.uiGroupBox1.Controls.Add(this.btnGoTime);
-            this.uiGroupBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.uiGroupBox1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.uiGroupBox1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiGroupBox1.Location = new System.Drawing.Point(4, 0);
-            this.uiGroupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.uiGroupBox1.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiGroupBox1.Name = "uiGroupBox1";
-            this.uiGroupBox1.Padding = new System.Windows.Forms.Padding(0, 32, 0, 0);
-            this.uiGroupBox1.Size = new System.Drawing.Size(344, 548);
-            this.uiGroupBox1.TabIndex = 0;
-            this.uiGroupBox1.Text = "查询条件";
-            this.uiGroupBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // uiLabel1
-            // 
-            this.uiLabel1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.uiLabel1.Location = new System.Drawing.Point(8, 52);
-            this.uiLabel1.Name = "uiLabel1";
-            this.uiLabel1.Size = new System.Drawing.Size(72, 23);
-            this.uiLabel1.TabIndex = 0;
-            this.uiLabel1.Text = "日期:";
-            // 
             // dtpSelTime
             // 
-            this.dtpSelTime.DateFormat = "yyyy-MM-dd ";
             this.dtpSelTime.FillColor = System.Drawing.Color.White;
             this.dtpSelTime.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dtpSelTime.Location = new System.Drawing.Point(78, 52);
+            this.dtpSelTime.Location = new System.Drawing.Point(71, 46);
             this.dtpSelTime.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dtpSelTime.MaxLength = 11;
+            this.dtpSelTime.MaxLength = 10;
             this.dtpSelTime.MinimumSize = new System.Drawing.Size(63, 0);
             this.dtpSelTime.Name = "dtpSelTime";
             this.dtpSelTime.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
-            this.dtpSelTime.Size = new System.Drawing.Size(144, 29);
+            this.dtpSelTime.Size = new System.Drawing.Size(150, 29);
             this.dtpSelTime.SymbolDropDown = 61555;
             this.dtpSelTime.SymbolNormal = 61555;
             this.dtpSelTime.SymbolSize = 24;
-            this.dtpSelTime.TabIndex = 3;
-            this.dtpSelTime.Text = "2025-03-28 ";
+            this.dtpSelTime.TabIndex = 1;
+            this.dtpSelTime.Text = "2025-03-29";
             this.dtpSelTime.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dtpSelTime.Value = new System.DateTime(2025, 3, 28, 14, 35, 12, 670);
+            this.dtpSelTime.Value = new System.DateTime(2025, 3, 29, 9, 27, 2, 248);
             this.dtpSelTime.Watermark = "";
-            // 
-            // uiLabel2
-            // 
-            this.uiLabel2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.uiLabel2.Location = new System.Drawing.Point(8, 102);
-            this.uiLabel2.Name = "uiLabel2";
-            this.uiLabel2.Size = new System.Drawing.Size(72, 23);
-            this.uiLabel2.TabIndex = 4;
-            this.uiLabel2.Text = "类型:";
-            // 
-            // lbShowType
-            // 
-            this.lbShowType.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbShowType.FillColor = System.Drawing.Color.White;
-            this.lbShowType.FillColor2 = System.Drawing.Color.White;
-            this.lbShowType.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbShowType.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
-            this.lbShowType.ItemSelectForeColor = System.Drawing.Color.White;
-            this.lbShowType.Location = new System.Drawing.Point(71, 95);
-            this.lbShowType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.lbShowType.MinimumSize = new System.Drawing.Size(1, 1);
-            this.lbShowType.Name = "lbShowType";
-            this.lbShowType.Padding = new System.Windows.Forms.Padding(2);
-            this.lbShowType.ShowText = false;
-            this.lbShowType.Size = new System.Drawing.Size(251, 374);
-            this.lbShowType.TabIndex = 7;
-            this.lbShowType.Text = "uiListBox1";
+            this.dtpSelTime.DropDownClosed += new System.EventHandler(this.dtpSelTime_DropDownClosed_1);
             // 
             // returnButon1
             // 
@@ -230,8 +230,8 @@
             this.Resize += new System.EventHandler(this.MothCostFrm_Resize);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
             this.uiGroupBox1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -245,10 +245,10 @@
         private Sunny.UI.UIGroupBox uiGroupBox1;
         private Sunny.UI.UIButton btnGoType;
         private Sunny.UI.UIButton btnGoTime;
-        private Sunny.UI.UIDatetimePicker dtpSelTime;
         private Sunny.UI.UILabel uiLabel1;
         private Sunny.UI.UILabel uiLabel2;
         private Sunny.UI.UIListBox lbShowType;
         private MyUserContorl.ReturnButon returnButon1;
+        private Sunny.UI.UIDatePicker dtpSelTime;
     }
 }

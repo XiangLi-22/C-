@@ -1,12 +1,47 @@
-﻿using Maticsoft.Model;
+﻿using Domains;
+using Domains.DTO;
+using Maticsoft.Model;
 using SQLDAL;
 using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
+using System.Linq;
+using System.Runtime.Remoting.Contexts;
+using System.Threading.Tasks;
 
 namespace BLL
 {
     public class DayCastBLL
     {
         DayCastDAL dayCastDAL = new DayCastDAL();
+
+        /// <summary>
+        /// 获取指定天的数据
+        /// </summary>
+        /// <param name="time">指定的日期</param>
+        /// <returns>数据</returns>
+        public List<DayDTO> SelectSpecifyTime(string time,out string message)
+        {
+            var query = dayCastDAL.Select(time);
+            if (query.Count == 0) message = $"{time}没有消费记录!";
+            else message = string.Empty;
+            return query;
+        }
+
+        /// <summary>
+        /// 获取当天的消费数据
+        /// </summary>
+        /// <returns></returns>
+        public async Task<(List<DayDTO> list, string message)> GetTodayCastAsync()
+        {
+            var query = dayCastDAL.GetList();
+            var list = await query.ToListAsync();
+            string message = list.Count == 0 ? "你还没有添加当日消费记录!" : string.Empty;
+            return (list, message);
+        }
+
+
 
         /// <summary>
         /// 向数据库添加消费数据

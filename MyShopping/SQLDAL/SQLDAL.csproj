@@ -71,6 +71,10 @@
       <Project>{b5ef1761-71d1-4420-8c9e-66fbdb8712af}</Project>
       <Name>Domains</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Hepler\Helper.csproj">
+      <Project>{768507C1-A666-4105-8481-A43D7492144B}</Project>
+      <Name>Helper</Name>
+    </ProjectReference>
     <ProjectReference Include="..\IDAL\IDAL.csproj">
       <Project>{f9935b5c-e931-427a-a854-5298ee095157}</Project>
       <Name>IDAL</Name>

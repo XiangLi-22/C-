@@ -24,3 +24,5 @@ D:\上位机正式课\MyShopping1\MyShopping\IDAL\obj\Debug\IDAL.csproj.CoreComp
 D:\上位机正式课\MyShopping1\MyShopping\IDAL\obj\Debug\IDAL.csproj.Up2Date
 D:\上位机正式课\MyShopping1\MyShopping\IDAL\obj\Debug\IDAL.dll
 D:\上位机正式课\MyShopping1\MyShopping\IDAL\obj\Debug\IDAL.pdb
+D:\上位机正式课\MyShopping1\MyShopping\IDAL\bin\Debug\Hepler.dll
+D:\上位机正式课\MyShopping1\MyShopping\IDAL\bin\Debug\Hepler.pdb

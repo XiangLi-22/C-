@@ -11,11 +11,11 @@ namespace BLL
     public class MothCastBLL
     {
         MothCastDAL mothCastDAL = new MothCastDAL();
-        public double GetTypeCouunt(int index)
-        {
-            List<DayCastInfo> list = mothCastDAL.GetMothCosts();
-            return 1.0;
-        }
+        //public double GetTypeCouunt(int index)
+        //{
+        //    List<DayCastInfo> list = mothCastDAL.GetMothCosts();
+        //    return 1.0;
+        //}
 
         /// <summary>
         /// 当添加日消费时,更新月消费

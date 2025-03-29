@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="Context\ShoppingModel.cs" />
     <Compile Include="DayCastInfo.cs" />
+    <Compile Include="DTO\DayDTO.cs" />
     <Compile Include="Migrations\202503251330316_Init.cs" />
     <Compile Include="Migrations\202503251330316_Init.Designer.cs">
       <DependentUpon>202503251330316_Init.cs</DependentUpon>
@@ -84,6 +85,12 @@
     <EmbeddedResource Include="Migrations\202503281213447_update-userinfo11.resx">
       <DependentUpon>202503281213447_update-userinfo11.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Hepler\Helper.csproj">
+      <Project>{768507c1-a666-4105-8481-a43d7492144b}</Project>
+      <Name>Helper</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

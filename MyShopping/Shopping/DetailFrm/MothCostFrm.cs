@@ -27,6 +27,7 @@ namespace Shopping.DetailImage
         #region 窗体事件
         private void MothCostFrm_Load(object sender, EventArgs e)
         {
+            dtpSelTime.Text = DateTime.Now.ToString("yyyy-MM-dd");
             BindLiveView();
             BindDataGirdView();
         }
@@ -83,7 +84,7 @@ namespace Shopping.DetailImage
             //series 位置
             var series = new UIPieSeries();
             series.Name = "";
-            series.Center = new UICenter(40, 50);
+            series.Center = new UICenter(35, 50);
             series.Radius = 70;
             //series.Label.Show = true;
 
@@ -147,7 +148,10 @@ namespace Shopping.DetailImage
 
         private void btnGoTime_Click(object sender, EventArgs e)
         {
-
+            DateTime time = dtpSelTime.Value;
+            DayCostFrm dayCostFrm = new DayCostFrm(this,true,time);
+            this.Hide();
+            dayCostFrm.Show();
         }
         #endregion
 
@@ -159,5 +163,9 @@ namespace Shopping.DetailImage
         }
         #endregion
 
+        private void dtpSelTime_DropDownClosed_1(object sender, EventArgs e)
+        {
+            MessageBox.Show($"{dtpSelTime.Value}");
+        }
     }
 }

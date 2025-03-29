@@ -1,34 +1,47 @@
-﻿using Domains;
+﻿using BLL;
+using Domains;
 using Domains.Context;
 using Helper;
-using Shopping.DTO;
+using HZH_Controls;
 using Shopping.MyUserContorl;
 using Sunny.UI;
 using System;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Shopping.DetailImage
 {
     public partial class DayCostFrm : Form
     {
-        public MainFrm MainFrm;
+        public Form MainFrm;
 
         ShoppingModel context = new ShoppingModel();
+        DayCastBLL dayCastBLL = new DayCastBLL();
 
-        public DayCostFrm(MainFrm mainFrm)
+        string message = string.Empty;
+
+        public bool IsSelect = false;
+        public DateTime Time;
+
+        public DayCostFrm(Form mainFrm = null, bool isSelect = false, DateTime time = default)
         {
             InitializeComponent();
             MainFrm = mainFrm;
+            this.IsSelect = isSelect;
+            this.Time = time;
         }
 
         #region 窗体事件
         private void DayCostFrm_Load(object sender, EventArgs e)
         {
-            BindGridView();
+            InitializeGridView();
+            if (!IsSelect) BindGridView();
+            else BindTimeGridView();
         }
         private void DayCostFrm_Resize(object sender, EventArgs e)
         {
@@ -40,43 +53,61 @@ namespace Shopping.DetailImage
         }
         #endregion
 
-        private void BindGridView()
+        #region 网格初始化
+        private void InitializeGridView()
         {
-            DateTime start = DateTime.Parse($"{DateTime.Now.Year}.{DateTime.Now.Month}.{DateTime.Now.Day} 00:00:00");
-            DateTime end = DateTime.Parse($"{DateTime.Now.Year}.{DateTime.Now.Month}.{DateTime.Now.Day} 23:59:59");
-            var query = from d in context.DayCastInfo
-                        where d.CurrentTime >=start && d.CurrentTime <= end
-                        orderby d.CurrentTime ascending
-                        select new DayDTO()
-                        {
-                            Id = d.Id,
-                            GoodsName = d.GoodsName,
-                            GoodsType = (GoodsType)d.GoodsType,
-                            GoodsPrice = d.GoodsPrice,
-                            DaysCast = d.DaysCast,
-                            TotalRemain = d.TotalRemain,
-                            CurrentTime = d.CurrentTime,
-                            State = d.State == 0?"正常":"已退款",
-                        };
+            uiDataGridView1.AutoGenerateColumns = false;
             uiDataGridView1.RowTemplate.Height = 45;
 
-            uiDataGridView1.DataSource = query.ToList();
-            uiDataGridView1.Columns[0].Visible = false;
-            uiDataGridView1.Columns[1].HeaderText = "商品名称";
-            uiDataGridView1.Columns[2].HeaderText = "商品类型";
-            uiDataGridView1.Columns[3].HeaderText = "商品价格";
-            uiDataGridView1.Columns[4].HeaderText = "当日消费";
-            uiDataGridView1.Columns[5].HeaderText = "剩余金额";
-            uiDataGridView1.Columns[6].HeaderText = "消费时间";
-            uiDataGridView1.Columns[7].HeaderText = "是否退款";
-            if (!uiDataGridView1.Columns.Contains("操作")) uiDataGridView1.Columns.Add("operate", "操作");
-            //封装一个方法 , 获取全部行,循环行数在单元格中进行添加自定义用户控件(即实例化),当定点击事件
+            uiDataGridView1.Columns.Clear();
+
+            uiDataGridView1.Columns.Add(new DataGridViewTextBoxColumn { Name = "Id", DataPropertyName = "Id", Visible = false });
+            uiDataGridView1.Columns.Add(new DataGridViewTextBoxColumn { Name = "GoodsName", DataPropertyName = "GoodsName", HeaderText = "商品名称" });
+            uiDataGridView1.Columns.Add(new DataGridViewTextBoxColumn { Name = "GoodsType", DataPropertyName = "GoodsType", HeaderText = "商品类型" });
+            uiDataGridView1.Columns.Add(new DataGridViewTextBoxColumn { Name = "GoodsPrice", DataPropertyName = "GoodsPrice", HeaderText = "商品价格" });
+            uiDataGridView1.Columns.Add(new DataGridViewTextBoxColumn { Name = "DaysCast", DataPropertyName = "DaysCast", HeaderText = "当日消费" });
+            uiDataGridView1.Columns.Add(new DataGridViewTextBoxColumn { Name = "TotalRemain", DataPropertyName = "TotalRemain", HeaderText = "剩余金额" });
+            uiDataGridView1.Columns.Add(new DataGridViewTextBoxColumn { Name = "CurrentTime", DataPropertyName = "CurrentTime", HeaderText = "消费时间" });
+            uiDataGridView1.Columns.Add(new DataGridViewTextBoxColumn { Name = "State", DataPropertyName = "State", HeaderText = "是否退款" });
+
+            if (!uiDataGridView1.Columns.Contains("操作"))
+                uiDataGridView1.Columns.Add(new DataGridViewTextBoxColumn { Name = "operate", HeaderText = "操作" });
+        }
+        #endregion
+
+        #region 数据绑定
+        private async void BindTimeGridView()
+        {
+            string time = Time.ToString("yyyy-MM-dd");
+            var query = dayCastBLL.SelectSpecifyTime(time, out message);
+
+            uiDataGridView1.RowTemplate.Height = 45;
+
+            uiDataGridView1.DataSource = query;
 
             BindGridViewButton();
 
-            if (query.Count() == 0) MessageBox.Show("你还没有添加当日消费记录!");
-        }
+            if (query.Count == 0)
+            {
+                await Task.Delay(500); // 等待UI线程空闲
+                MessageBox.Show(message);
+            }
 
+        }
+        private async void BindGridView()
+        {
+            var (list, message) = await dayCastBLL.GetTodayCastAsync();
+
+            uiDataGridView1.RowTemplate.Height = 45;
+            uiDataGridView1.DataSource = list;
+
+            if (list.Count == 0)
+            {
+                MessageBox.Show(message);
+                return;
+            }
+            BindGridViewButton();
+        }
         private void BindGridViewButton()
         {
             var binder = new DataGridViewButtonBinder<DelectButton>(uiDataGridView1, "operate", row =>
@@ -97,6 +128,7 @@ namespace Shopping.DetailImage
 
             binder.BindButtons();
         }
+        #endregion
 
         #region 美化页面
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -117,7 +149,11 @@ namespace Shopping.DetailImage
             stringFormat.Alignment = StringAlignment.Center;  // 水平居中
             stringFormat.LineAlignment = StringAlignment.Center; // 垂直居中
 
-            string text = $"{dateTime.Year}年{dateTime.Month}月{dateTime.Day}日消费详情";
+            string text = string.Empty;
+            if (!IsSelect)
+                text = $"{dateTime.Year}年{dateTime.Month}月{dateTime.Day}日消费详情";
+            else
+                text = $"{Time.Year}年{Time.Month}月{Time.Day}日消费详情";
 
             //测量字体的大小
             SizeF size = g.MeasureString(text, font);

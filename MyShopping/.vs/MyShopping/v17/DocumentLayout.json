@@ -3,24 +3,36 @@
   "WorkspaceRootPath": "D:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\MyShopping1\\MyShopping\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7703BA7E-B793-42C4-AF3B-A84B77642AE9}|Shopping\\Shopping.csproj|d:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\myshopping1\\myshopping\\shopping\\detailfrm\\mothcostfrm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7703BA7E-B793-42C4-AF3B-A84B77642AE9}|Shopping\\Shopping.csproj|solutionrelative:shopping\\detailfrm\\mothcostfrm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{768507C1-A666-4105-8481-A43D7492144B}|Hepler\\Helper.csproj|d:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\myshopping1\\myshopping\\hepler\\datagridviewbuttonbinder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{768507C1-A666-4105-8481-A43D7492144B}|Hepler\\Helper.csproj|solutionrelative:hepler\\datagridviewbuttonbinder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7703BA7E-B793-42C4-AF3B-A84B77642AE9}|Shopping\\Shopping.csproj|d:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\myshopping1\\myshopping\\shopping\\detailfrm\\daycostfrm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7703BA7E-B793-42C4-AF3B-A84B77642AE9}|Shopping\\Shopping.csproj|solutionrelative:shopping\\detailfrm\\daycostfrm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EDF8F21-ECBC-4297-B17C-2F23FD6337E7}|BLL\\BLL.csproj|d:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\myshopping1\\myshopping\\bll\\daycastbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8EDF8F21-ECBC-4297-B17C-2F23FD6337E7}|BLL\\BLL.csproj|solutionrelative:bll\\daycastbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9935B5C-E931-427A-A854-5298EE095157}|IDAL\\IDAL.csproj|d:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\myshopping1\\myshopping\\idal\\ibase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9935B5C-E931-427A-A854-5298EE095157}|IDAL\\IDAL.csproj|solutionrelative:idal\\ibase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A71129B2-BA03-4477-AC33-01B4A638B02C}|SQLDAL\\SQLDAL.csproj|d:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\myshopping1\\myshopping\\sqldal\\daycastdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A71129B2-BA03-4477-AC33-01B4A638B02C}|SQLDAL\\SQLDAL.csproj|solutionrelative:sqldal\\daycastdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8EDF8F21-ECBC-4297-B17C-2F23FD6337E7}|BLL\\BLL.csproj|D:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\MyShopping1\\MyShopping\\bll\\mothcastbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8EDF8F21-ECBC-4297-B17C-2F23FD6337E7}|BLL\\BLL.csproj|solutionrelative:bll\\mothcastbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{7703BA7E-B793-42C4-AF3B-A84B77642AE9}|Shopping\\Shopping.csproj|d:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\myshopping1\\myshopping\\shopping\\detailfrm\\mothcostfrm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7703BA7E-B793-42C4-AF3B-A84B77642AE9}|Shopping\\Shopping.csproj|solutionrelative:shopping\\detailfrm\\mothcostfrm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A71129B2-BA03-4477-AC33-01B4A638B02C}|SQLDAL\\SQLDAL.csproj|D:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\MyShopping1\\MyShopping\\sqldal\\mothcastdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A71129B2-BA03-4477-AC33-01B4A638B02C}|SQLDAL\\SQLDAL.csproj|solutionrelative:sqldal\\mothcastdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F9935B5C-E931-427A-A854-5298EE095157}|IDAL\\IDAL.csproj|D:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\MyShopping1\\MyShopping\\idal\\imothcost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F9935B5C-E931-427A-A854-5298EE095157}|IDAL\\IDAL.csproj|solutionrelative:idal\\imothcost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7703BA7E-B793-42C4-AF3B-A84B77642AE9}|Shopping\\Shopping.csproj|D:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\MyShopping1\\MyShopping\\shopping\\detailfrm\\mothcostfrm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{7703BA7E-B793-42C4-AF3B-A84B77642AE9}|Shopping\\Shopping.csproj|solutionrelative:shopping\\detailfrm\\mothcostfrm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,63 +66,107 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IMothCost.cs",
-              "DocumentMoniker": "D:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\MyShopping1\\MyShopping\\IDAL\\IMothCost.cs",
-              "RelativeDocumentMoniker": "IDAL\\IMothCost.cs",
-              "ToolTip": "D:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\MyShopping1\\MyShopping\\IDAL\\IMothCost.cs",
-              "RelativeToolTip": "IDAL\\IMothCost.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAAA8AAAAIAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "DataGridViewButtonBinder.cs",
+              "DocumentMoniker": "D:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\MyShopping1\\MyShopping\\Hepler\\DataGridViewButtonBinder.cs",
+              "RelativeDocumentMoniker": "Hepler\\DataGridViewButtonBinder.cs",
+              "ToolTip": "D:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\MyShopping1\\MyShopping\\Hepler\\DataGridViewButtonBinder.cs",
+              "RelativeToolTip": "Hepler\\DataGridViewButtonBinder.cs",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAuwHcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T13:16:01.385Z"
+              "WhenOpened": "2025-03-29T03:46:05.364Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IBase.cs",
+              "DocumentMoniker": "D:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\MyShopping1\\MyShopping\\IDAL\\IBase.cs",
+              "RelativeDocumentMoniker": "IDAL\\IBase.cs",
+              "ToolTip": "D:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\MyShopping1\\MyShopping\\IDAL\\IBase.cs",
+              "RelativeToolTip": "IDAL\\IBase.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAawA4AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T03:10:39.651Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DayCastBLL.cs",
+              "DocumentMoniker": "D:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\MyShopping1\\MyShopping\\BLL\\DayCastBLL.cs",
+              "RelativeDocumentMoniker": "BLL\\DayCastBLL.cs",
+              "ToolTip": "D:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\MyShopping1\\MyShopping\\BLL\\DayCastBLL.cs",
+              "RelativeToolTip": "BLL\\DayCastBLL.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAIAwwCUAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T01:50:16.165Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "DayCostFrm.cs",
+              "DocumentMoniker": "D:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\MyShopping1\\MyShopping\\Shopping\\DetailFrm\\DayCostFrm.cs",
+              "RelativeDocumentMoniker": "Shopping\\DetailFrm\\DayCostFrm.cs",
+              "ToolTip": "D:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\MyShopping1\\MyShopping\\Shopping\\DetailFrm\\DayCostFrm.cs",
+              "RelativeToolTip": "Shopping\\DetailFrm\\DayCostFrm.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAuwHAAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T01:38:33.937Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "MothCastBLL.cs",
               "DocumentMoniker": "D:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\MyShopping1\\MyShopping\\BLL\\MothCastBLL.cs",
               "RelativeDocumentMoniker": "BLL\\MothCastBLL.cs",
               "ToolTip": "D:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\MyShopping1\\MyShopping\\BLL\\MothCastBLL.cs",
               "RelativeToolTip": "BLL\\MothCastBLL.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAuwDkAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAACYAAAAAAAAAAAAkwBIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T13:13:07.68Z"
+              "WhenOpened": "2025-03-28T13:13:07.68Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "MothCastDAL.cs",
               "DocumentMoniker": "D:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\MyShopping1\\MyShopping\\SQLDAL\\MothCastDAL.cs",
               "RelativeDocumentMoniker": "SQLDAL\\MothCastDAL.cs",
               "ToolTip": "D:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\MyShopping1\\MyShopping\\SQLDAL\\MothCastDAL.cs",
               "RelativeToolTip": "SQLDAL\\MothCastDAL.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAADwv04AAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAAAUwCEAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T13:12:56.598Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MothCostFrm.cs",
-              "DocumentMoniker": "D:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\MyShopping1\\MyShopping\\Shopping\\DetailFrm\\MothCostFrm.cs",
-              "RelativeDocumentMoniker": "Shopping\\DetailFrm\\MothCostFrm.cs",
-              "ToolTip": "D:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\MyShopping1\\MyShopping\\Shopping\\DetailFrm\\MothCostFrm.cs",
-              "RelativeToolTip": "Shopping\\DetailFrm\\MothCostFrm.cs",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAwwF0AAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T13:11:51.163Z",
+              "WhenOpened": "2025-03-28T13:12:56.598Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "MothCostFrm.cs [\u8BBE\u8BA1]",
+              "Title": "DayCastDAL.cs",
+              "DocumentMoniker": "D:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\MyShopping1\\MyShopping\\SQLDAL\\DayCastDAL.cs",
+              "RelativeDocumentMoniker": "SQLDAL\\DayCastDAL.cs",
+              "ToolTip": "D:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\MyShopping1\\MyShopping\\SQLDAL\\DayCastDAL.cs",
+              "RelativeToolTip": "SQLDAL\\DayCastDAL.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAA/wEUAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T01:30:42.77Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MothCostFrm.cs",
               "DocumentMoniker": "D:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\MyShopping1\\MyShopping\\Shopping\\DetailFrm\\MothCostFrm.cs",
               "RelativeDocumentMoniker": "Shopping\\DetailFrm\\MothCostFrm.cs",
-              "ToolTip": "D:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\MyShopping1\\MyShopping\\Shopping\\DetailFrm\\MothCostFrm.cs [\u8BBE\u8BA1]",
-              "RelativeToolTip": "Shopping\\DetailFrm\\MothCostFrm.cs [\u8BBE\u8BA1]",
+              "ToolTip": "D:\\\u4E0A\u4F4D\u673A\u6B63\u5F0F\u8BFE\\MyShopping1\\MyShopping\\Shopping\\DetailFrm\\MothCostFrm.cs",
+              "RelativeToolTip": "Shopping\\DetailFrm\\MothCostFrm.cs",
+              "ViewState": "AgIAAI0AAAAAAAAAAAAcwJgAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T13:11:48.984Z"
+              "WhenOpened": "2025-03-29T01:09:00.01Z",
+              "EditorCaption": ""
             }
           ]
         }

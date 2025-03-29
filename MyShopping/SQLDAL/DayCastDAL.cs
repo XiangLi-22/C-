@@ -1,16 +1,20 @@
-﻿using Domains.Context;
+﻿using Domains;
+using Domains.Context;
+using Domains.DTO;
 using IDAL;
 using Maticsoft.Model;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 
 namespace SQLDAL
 {
     public class DayCastDAL : IDayCost
     {
-        //string connectionString = ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
         ShoppingModel c = new ShoppingModel();
 
         public bool Add(DayCastInfo model)
@@ -68,9 +72,25 @@ namespace SQLDAL
             throw new NotImplementedException();
         }
 
-        public DataSet GetList(int currentPage, int pageSize)
+        public IQueryable<DayDTO> GetList()
         {
-            throw new NotImplementedException();
+            DateTime start = DateTime.Parse($"{DateTime.Now.Year}.{DateTime.Now.Month}.{DateTime.Now.Day} 00:00:00");
+            DateTime end = DateTime.Parse($"{DateTime.Now.Year}.{DateTime.Now.Month}.{DateTime.Now.Day} 23:59:59");
+            var query = from d in c.DayCastInfo
+                        where d.CurrentTime >= start && d.CurrentTime <= end
+                        orderby d.CurrentTime ascending
+                        select new DayDTO()
+                        {
+                            Id = d.Id,
+                            GoodsName = d.GoodsName,
+                            GoodsType = (GoodsType)d.GoodsType,
+                            GoodsPrice = d.GoodsPrice,
+                            DaysCast = d.DaysCast,
+                            TotalRemain = d.TotalRemain,
+                            CurrentTime = d.CurrentTime,
+                            State = d.State == 0 ? "正常" : "已退款",
+                        };
+            return query;
         }
 
         public DayCastInfo GetModel(int id)
@@ -78,9 +98,31 @@ namespace SQLDAL
             throw new NotImplementedException();
         }
 
-        public DataSet Select(params SqlParameter[] sqlParameters)
+        /// <summary>
+        /// 获取指定天的数据
+        /// </summary>
+        /// <param name="time"></param>
+        /// <returns>数据</returns>
+        public List<DayDTO> Select(string time)
         {
-            throw new NotImplementedException();
+            var query = from d in c.DayCastInfo
+                        //where d.CurrentTime.ToString("yyyy-MM-dd") == time
+                        orderby d.CurrentTime ascending
+                        select new DayDTO()
+                        {
+                            Id = d.Id,
+                            GoodsName = d.GoodsName,
+                            GoodsType = (GoodsType)d.GoodsType,
+                            GoodsPrice = d.GoodsPrice,
+                            DaysCast = d.DaysCast,
+                            TotalRemain = d.TotalRemain,
+                            CurrentTime = d.CurrentTime,
+                            State = d.State == 0 ? "正常" : "已退款",
+                        };
+            c.SaveChanges();
+            var list = query.ToList();
+            list = list.FindAll(l => l.CurrentTime.ToString("yyyy-MM-dd") == time);
+            return list;
         }
 
         public int TotalPage(int pageSize)

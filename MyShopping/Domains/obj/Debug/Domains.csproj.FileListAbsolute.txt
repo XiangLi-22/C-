@@ -28,3 +28,5 @@ D:\上位机正式课\MyShopping1\MyShopping\Domains\obj\Debug\Domains.dll
 D:\上位机正式课\MyShopping1\MyShopping\Domains\obj\Debug\Domains.pdb
 D:\上位机正式课\MyShopping1\MyShopping\Domains\obj\Debug\Domains.Migrations.updateuserinfo.resources
 D:\上位机正式课\MyShopping1\MyShopping\Domains\obj\Debug\Domains.Migrations.updateuserinfo11.resources
+D:\上位机正式课\MyShopping1\MyShopping\Domains\bin\Debug\Hepler.dll
+D:\上位机正式课\MyShopping1\MyShopping\Domains\bin\Debug\Hepler.pdb

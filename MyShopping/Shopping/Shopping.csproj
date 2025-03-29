@@ -98,7 +98,6 @@
     <Compile Include="DetailFrm\YearCostFrm.Designer.cs">
       <DependentUpon>YearCostFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DTO\DayDTO.cs" />
     <Compile Include="MainFrm.cs">
       <SubType>Form</SubType>
     </Compile>
