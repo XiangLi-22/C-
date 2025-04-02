@@ -12,7 +12,6 @@ namespace SQLDAL
     public class MothCastDAL : IMothCost
     {
         ShoppingModel context = new ShoppingModel();
-
         
 
         /// <summary>
@@ -40,15 +39,28 @@ namespace SQLDAL
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        public bool Add(MothCastInfo model)
+        public bool Add()
         {
-            context.MothCastInfo.Add(model);
-            int row = context.SaveChanges();
-            return row==1;
+            int year = DateTime.Now.Year;
+            int month = DateTime.Now.Month;
+            var query = context.MothCastInfo.Where(m => m.CurrentTime.Year == year && m.CurrentTime.Month == month).OrderByDescending(m => m.CurrentTime).FirstOrDefault();
+
+            if (query == null)
+            {
+                var newModel = new MothCastInfo
+                {
+                    CurrentTime = DateTime.Now,
+                    TotalRemain = 1500 // 如果你有默认值，也可以改
+                };
+                context.MothCastInfo.Add(newModel);
+                context.SaveChanges();
+            }
+            return true;
         }
 
+
         /// <summary>
-        /// 获取上一条数据 ,如果没有数据就添加一条初始数据
+        /// 获取本月数据 ,如果没有数据就添加一条初始数据
         /// </summary>
         /// <returns></returns>
         public MothCastInfo GetLastMonth()

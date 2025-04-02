@@ -1,6 +1,6 @@
-﻿namespace Shopping.MyUserContorl
+﻿namespace Hepler.MyUserContorl
 {
-    partial class TurnPageButton
+    partial class NextPageButton
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -28,8 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // NextPageButton
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Name = "NextPageButton";
+            this.Size = new System.Drawing.Size(70, 70);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

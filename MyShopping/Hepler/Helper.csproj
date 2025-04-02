@@ -46,7 +46,65 @@
     <Compile Include="DataGridViewButtonBinder.cs" />
     <Compile Include="GoodsType.cs" />
     <Compile Include="GoodsTypeExtensions.cs" />
+    <Compile Include="InitializationDataGirdView.cs" />
+    <Compile Include="MyUserContorl\AddButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserContorl\AddButton.Designer.cs">
+      <DependentUpon>AddButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserContorl\LastPageButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserContorl\LastPageButton.Designer.cs">
+      <DependentUpon>LastPageButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserContorl\NextPageButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserContorl\NextPageButton.Designer.cs">
+      <DependentUpon>NextPageButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserContorl\UpdAndREFButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserContorl\UpdAndREFButton.Designer.cs">
+      <DependentUpon>UpdAndREFButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserContorl\ReturnButon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserContorl\ReturnButon.Designer.cs">
+      <DependentUpon>ReturnButon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserContorl\PageButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserContorl\PageButton.Designer.cs">
+      <DependentUpon>PageButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProperNameConvertGoodsTypeName.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MyUserContorl\AddButton.resx">
+      <DependentUpon>AddButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserContorl\LastPageButton.resx">
+      <DependentUpon>LastPageButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserContorl\NextPageButton.resx">
+      <DependentUpon>NextPageButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserContorl\UpdAndREFButton.resx">
+      <DependentUpon>UpdAndREFButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserContorl\PageButton.resx">
+      <DependentUpon>PageButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserContorl\ReturnButon.resx">
+      <DependentUpon>ReturnButon.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

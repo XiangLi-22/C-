@@ -1,16 +1,11 @@
 ﻿using BLL;
-using Domains;
 using Domains.Context;
 using Helper;
-using HZH_Controls;
+using Hepler;
 using Shopping.MyUserContorl;
-using Sunny.UI;
 using System;
-using System.Data;
-using System.Data.Entity;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -19,14 +14,17 @@ namespace Shopping.DetailImage
     public partial class DayCostFrm : Form
     {
         public Form MainFrm;
-
-        ShoppingModel context = new ShoppingModel();
-        DayCastBLL dayCastBLL = new DayCastBLL();
-
-        string message = string.Empty;
-
         public bool IsSelect = false;
         public DateTime Time;
+
+        DayCastBLL dayCastBLL = new DayCastBLL();
+        string message = string.Empty;
+
+        int page = 1;
+        int pagesize = 10;
+        int totalpage = 1;
+
+        DataGridViewButtonBinder<UpdAndREFButton> binds;
 
         public DayCostFrm(Form mainFrm = null, bool isSelect = false, DateTime time = default)
         {
@@ -39,7 +37,8 @@ namespace Shopping.DetailImage
         #region 窗体事件
         private void DayCostFrm_Load(object sender, EventArgs e)
         {
-            InitializeGridView();
+            InitializationDataGirdView.InitializeGridView(uiDataGridView1); //对网格进行初始化
+            BindGridViewButton();
             if (!IsSelect) BindGridView();
             else BindTimeGridView();
         }
@@ -53,33 +52,10 @@ namespace Shopping.DetailImage
         }
         #endregion
 
-        #region 网格初始化
-        private void InitializeGridView()
-        {
-            uiDataGridView1.AutoGenerateColumns = false;
-            uiDataGridView1.RowTemplate.Height = 45;
-
-            uiDataGridView1.Columns.Clear();
-
-            uiDataGridView1.Columns.Add(new DataGridViewTextBoxColumn { Name = "Id", DataPropertyName = "Id", Visible = false });
-            uiDataGridView1.Columns.Add(new DataGridViewTextBoxColumn { Name = "GoodsName", DataPropertyName = "GoodsName", HeaderText = "商品名称" });
-            uiDataGridView1.Columns.Add(new DataGridViewTextBoxColumn { Name = "GoodsType", DataPropertyName = "GoodsType", HeaderText = "商品类型" });
-            uiDataGridView1.Columns.Add(new DataGridViewTextBoxColumn { Name = "GoodsPrice", DataPropertyName = "GoodsPrice", HeaderText = "商品价格" });
-            uiDataGridView1.Columns.Add(new DataGridViewTextBoxColumn { Name = "DaysCast", DataPropertyName = "DaysCast", HeaderText = "当日消费" });
-            uiDataGridView1.Columns.Add(new DataGridViewTextBoxColumn { Name = "TotalRemain", DataPropertyName = "TotalRemain", HeaderText = "剩余金额" });
-            uiDataGridView1.Columns.Add(new DataGridViewTextBoxColumn { Name = "CurrentTime", DataPropertyName = "CurrentTime", HeaderText = "消费时间" });
-            uiDataGridView1.Columns.Add(new DataGridViewTextBoxColumn { Name = "State", DataPropertyName = "State", HeaderText = "是否退款" });
-
-            if (!uiDataGridView1.Columns.Contains("操作"))
-                uiDataGridView1.Columns.Add(new DataGridViewTextBoxColumn { Name = "operate", HeaderText = "操作" });
-        }
-        #endregion
-
         #region 数据绑定
         private async void BindTimeGridView()
         {
-            string time = Time.ToString("yyyy-MM-dd");
-            var query = dayCastBLL.SelectSpecifyTime(time, out message);
+            var query = dayCastBLL.SelectSpecifyTime(Time,page,pagesize , out message);
 
             uiDataGridView1.RowTemplate.Height = 45;
 
@@ -93,10 +69,15 @@ namespace Shopping.DetailImage
                 MessageBox.Show(message);
             }
 
+            binds.RefreshButtons();
+
+            totalpage = dayCastBLL.TimeTotalPage(pagesize,Time);
+            pageButton1.lblText = $"{page}/{totalpage}";
+
         }
         private async void BindGridView()
         {
-            var (list, message) = await dayCastBLL.GetTodayCastAsync();
+            var (list, message) = await dayCastBLL.GetTodayCastAsync(page,pagesize);
 
             uiDataGridView1.RowTemplate.Height = 45;
             uiDataGridView1.DataSource = list;
@@ -106,13 +87,17 @@ namespace Shopping.DetailImage
                 MessageBox.Show(message);
                 return;
             }
-            BindGridViewButton();
+
+            binds.RefreshButtons();
+
+            totalpage = dayCastBLL.TotalPage(pagesize);
+            pageButton1.lblText = $"{page}/{totalpage}";
         }
         private void BindGridViewButton()
         {
-            var binder = new DataGridViewButtonBinder<DelectButton>(uiDataGridView1, "operate", row =>
+            binds = new DataGridViewButtonBinder<UpdAndREFButton>(uiDataGridView1, "operate", row =>
             {
-                var button = new DelectButton();
+                var button = new UpdAndREFButton();
                 int id = Convert.ToInt32(row.Cells["Id"].Value);
 
                 button.btnRefClicked += (s, e) =>
@@ -125,8 +110,6 @@ namespace Shopping.DetailImage
                 };
                 return button;
             });
-
-            binder.BindButtons();
         }
         #endregion
 
@@ -167,9 +150,64 @@ namespace Shopping.DetailImage
             this.Hide();
             MainFrm.Show();
         }
+
+
         #endregion
 
+        #region 分页事件
+        private void pageButton1_tsbFirstClick(object sender, EventArgs e)
+        {
+            page = 1;
+            if (!IsSelect) BindGridView();
+            else BindTimeGridView();
+        }
 
+        private void pageButton1_tsbGoClick(object sender, EventArgs e)
+        {
+            if (!char.IsDigit(Convert.ToChar(pageButton1.textBoxeText)))
+            {
+                MessageBox.Show("请输入正确的数字!", "错误");
+                return;
+            }
+            if (Convert.ToInt32(pageButton1.textBoxeText) > totalpage || Convert.ToInt32(pageButton1.textBoxeText) < 1)
+            {
+                MessageBox.Show($"页数必须在1和{totalpage}之间!", "错误");
+                return;
+            }
+            page = Convert.ToInt32(pageButton1.textBoxeText);
+            if (!IsSelect) BindGridView();
+            else BindTimeGridView();
+        }
+
+        private void pageButton1_tsbLastClick(object sender, EventArgs e)
+        {
+            page = totalpage;
+            if (!IsSelect) BindGridView();
+            else BindTimeGridView();
+        }
+
+        private void pageButton1_tsbNextClick(object sender, EventArgs e)
+        {
+            if (page < totalpage) page++;
+            if (!IsSelect) BindGridView();
+            else BindTimeGridView();
+        }
+
+        private void pageButton1_tsbPrevClick(object sender, EventArgs e)
+        {
+            if (page > 1) page--;
+            if (!IsSelect) BindGridView();
+            else BindTimeGridView();
+        }
+
+        private void pageButton1_tscbPageSizeSelectedIndexChanged(object sender, EventArgs e)
+        {
+            pagesize = Convert.ToInt32(pageButton1.pageSizeSelectItem);
+            page = 1;
+            if (!IsSelect) BindGridView();
+            else BindTimeGridView();
+        }
+        #endregion
 
     }
 }

@@ -1,18 +1,11 @@
 ﻿using BLL;
 using Maticsoft.Model;
 using Shopping.DetailImage;
-using SQLDAL;
 using Sunny.UI;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Shopping
@@ -20,6 +13,7 @@ namespace Shopping
     public partial class MainFrm : Form
     {
         DayCastBLL dayCastBLL = new DayCastBLL();
+        MothCastBLL mothCastBLL = new MothCastBLL();
 
         static float totalMoney = 1500;  //总限额
 
@@ -32,23 +26,26 @@ namespace Shopping
         public MainFrm()
         {
             InitializeComponent();
-            remainMoney = dayCastBLL.GetLastRemainMoney();
+            remainMoney = mothCastBLL.GetCurrentMonth().TotalRemain;
             money = totalMoney - remainMoney;
         }
 
+        #region 窗体事件
         private void MainFrm_Load(object sender, EventArgs e)
         {
-            string path = Path.Combine(Environment.CurrentDirectory, @"../../aaa.gif");
+            string path = Path.Combine(Environment.CurrentDirectory, @"..\..\image\aaa.gif");
             pictureBox1.Image = Image.FromFile(path);
             BindDoughnutChart();
         }
+        #endregion
+
 
         private void myButton1_Click(object sender, EventArgs e)
         {
             var model = new DayCastInfo()
             {
                 GoodsName = "午餐",
-                GoodsType = Convert.ToInt32(textBox1.Text),
+                GoodsType = 1,
                 GoodsPrice = 10,
                 //CurrentTime = DateTime.Parse("2025.3.26")
             };
@@ -60,7 +57,7 @@ namespace Shopping
             BindDoughnutChart();
         }
 
-        #region 页面美化
+        #region 数据绑定
         private void BindDoughnutChart()
         {
             var option = new UIDoughnutOption();
@@ -111,7 +108,9 @@ namespace Shopping
             //设置Option
             uiDoughnutChart1.SetOption(option);
         }
+        #endregion
 
+        #region 页面美化
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
             DateTime dateTime = DateTime.Now;
@@ -152,8 +151,6 @@ namespace Shopping
             g.DrawString($"限额{totalMoney}元", font, brush, new PointF(panel3.Width / 2F, panel3.Height / 2F), stringFormat);
         }
         #endregion
-
-
 
         #region 详情图
         private void uiButton1_Click(object sender, EventArgs e)

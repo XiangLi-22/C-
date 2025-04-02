@@ -1,15 +1,11 @@
 ﻿using BLL;
 using Domains;
+using Shopping.DetailFrm;
 using Sunny.UI;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Shopping.DetailImage
@@ -28,6 +24,7 @@ namespace Shopping.DetailImage
         private void MothCostFrm_Load(object sender, EventArgs e)
         {
             dtpSelTime.Text = DateTime.Now.ToString("yyyy-MM-dd");
+            mothCastBLL.Add();
             BindLiveView();
             BindDataGirdView();
         }
@@ -41,7 +38,6 @@ namespace Shopping.DetailImage
             Application.Exit();
         }
         #endregion
-
 
         #region 数据绑定事件
         private void BindLiveView()
@@ -143,7 +139,10 @@ namespace Shopping.DetailImage
         #region 查询跳转
         private void btnGoType_Click(object sender, EventArgs e)
         {
-
+            int t = lbShowType.SelectedIndex + 1;
+            TypeFrm typeFrm = new TypeFrm(this,t);
+            typeFrm.Show();
+            this.Hide();
         }
 
         private void btnGoTime_Click(object sender, EventArgs e)
@@ -163,9 +162,6 @@ namespace Shopping.DetailImage
         }
         #endregion
 
-        private void dtpSelTime_DropDownClosed_1(object sender, EventArgs e)
-        {
-            MessageBox.Show($"{dtpSelTime.Value}");
-        }
+
     }
 }

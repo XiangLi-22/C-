@@ -15,9 +15,9 @@ namespace IDAL
         bool Add(T modal);
         bool Update(params SqlParameter[] sqlParameters);
         bool Delete(int id);
-        List<DayDTO> Select(string time);
-        IQueryable<DayDTO> GetList();
+        List<DayDTO> Select(DateTime time,int page,int pagesize);
+        IQueryable<DayDTO> GetList(int page, int pagesize);
         T GetModel(int id);
-        int TotalPage(int pageSize);
+        int TotalPage(int pageSize, int t);
     }
 }

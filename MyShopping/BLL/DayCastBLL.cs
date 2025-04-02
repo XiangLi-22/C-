@@ -21,10 +21,10 @@ namespace BLL
         /// </summary>
         /// <param name="time">指定的日期</param>
         /// <returns>数据</returns>
-        public List<DayDTO> SelectSpecifyTime(string time,out string message)
+        public List<DayDTO> SelectSpecifyTime(DateTime time, int page, int pagesize,out string message)
         {
-            var query = dayCastDAL.Select(time);
-            if (query.Count == 0) message = $"{time}没有消费记录!";
+            var query = dayCastDAL.Select(time,page,pagesize);
+            if (query.Count == 0) message = $"{time.ToString("yyyy年MM月dd日")}没有消费记录!";
             else message = string.Empty;
             return query;
         }
@@ -33,9 +33,9 @@ namespace BLL
         /// 获取当天的消费数据
         /// </summary>
         /// <returns></returns>
-        public async Task<(List<DayDTO> list, string message)> GetTodayCastAsync()
+        public async Task<(List<DayDTO> list, string message)> GetTodayCastAsync(int page, int pagesize)
         {
-            var query = dayCastDAL.GetList();
+            var query = dayCastDAL.GetList(page,pagesize);
             var list = await query.ToListAsync();
             string message = list.Count == 0 ? "你还没有添加当日消费记录!" : string.Empty;
             return (list, message);
@@ -83,6 +83,44 @@ namespace BLL
             if(dayCastDAL.GetLastDayCost()==null) return 1500;
 
             return dayCastDAL.GetLastDayCost().TotalRemain;
+        }
+
+        /// <summary>
+        /// 获取指定类型的总消费记录并分页
+        /// </summary>
+        /// <param name="t"></param>
+        /// <param name="page"></param>
+        /// <param name="pagesize"></param>
+        /// <param name="message"></param>
+        /// <returns></returns>
+        public List<DayDTO> GetTypeCast(int t,int page, int pagesize,out string message)
+        {
+            message = string.Empty;
+            var list =  dayCastDAL.GetTypeCast(t,page,pagesize).ToList<DayDTO>();
+            if (list.Count == 0) message = "本月没有消费记录!";
+            return list;
+        }
+
+        /// <summary>
+        /// 获取总页数
+        /// </summary>
+        /// <param name="pageSize"></param>
+        /// <param name="t"></param>
+        /// <returns></returns>
+        public int TotalPage(int pageSize, int t = -1)
+        {
+            return dayCastDAL.TotalPage(pageSize, t);
+        }
+
+        /// <summary>
+        /// 获取指定时间的总页数
+        /// </summary>
+        /// <param name="pageSize"></param>
+        /// <param name="time"></param>
+        /// <returns></returns>
+        public int TimeTotalPage(int pageSize, DateTime time)
+        {
+            return dayCastDAL.TimeTotalPage(pageSize, time);
         }
     }
 }

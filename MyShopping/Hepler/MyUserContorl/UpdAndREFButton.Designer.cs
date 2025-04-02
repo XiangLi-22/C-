@@ -1,6 +1,6 @@
 ﻿namespace Shopping.MyUserContorl
 {
-    partial class DelectButton
+    partial class UpdAndREFButton
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -56,7 +56,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.btnRef);
             this.Controls.Add(this.btnUpd);
             this.Name = "DelectButton";

@@ -4,12 +4,10 @@ using Domains.DTO;
 using IDAL;
 using Maticsoft.Model;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Runtime.Remoting.Contexts;
 
 namespace SQLDAL
 {
@@ -17,62 +15,54 @@ namespace SQLDAL
     {
         ShoppingModel c = new ShoppingModel();
 
+        /// <summary>
+        /// 添加当日消费
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         public bool Add(DayCastInfo model)
         {
-            #region dapper
-            //double daysCost = 0;
-            //float totalMoney = 0;
-            ////在这里调用getmodel(),查看上一个dascost
-
-            //using (SqlConnection sqlConnection = new SqlConnection(connectionString))
-            //{
-            //    // 执行查询，返回 DaysCost 和 TotalRemain
-            //    var lastDayData = GetLastDayCost();
-
-            //    // 如果查询到上一个记录，则进行赋值
-            //    if (lastDayData != null)
-            //    {
-            //        daysCost = lastDayData.DaysCost;
-            //        totalMoney = lastDayData.TotalRemain;
-            //    }
-            //    else
-            //    {
-            //        // 如果没有记录，设置默认值（比如为 0 或其他合适的默认值）
-            //        daysCost = 0;
-            //        var money = GetLastDayCost();
-            //        if (money != null)
-            //            totalMoney = money.TotalRemain;
-            //        else
-            //            totalMoney = 1500;
-            //    }
-
-
-            //    object obj = new
-            //    {
-            //        N = model.GoodName,
-            //        P = model.price,
-            //        Type = model.Type,
-            //        TM = totalMoney-daysCost-model.price,
-            //        DC = daysCost + model.price,    
-            //        Time = DateTime.Now,
-            //    };
-            //    string sql = "INSERT INTO DayCost (GoodName, Price, Type, TotalRemain, DaysCost, Time) VALUES (@N, @P, @Type, @TM, @DC, @Time);";
-            //    sqlConnection.Execute(sql, obj);
-            //}
-            //return true;
-            #endregion
-
             c.DayCastInfo.Add(model);
             int row = c.SaveChanges();
             return row == 1;
         }
+
+        /// <summary>
+        /// 获取当月指定消费类型的所有消费记录的数据
+        /// </summary>
+        /// <param name="t">指定的类型</param>
+        /// <returns></returns>
+        public IQueryable<DayDTO> GetTypeCast(int t,int page,int pagesize)
+        {
+            int dt = DateTime.Now.Month;
+            var query = c.DayCastInfo.Where(d => d.GoodsType == t && d.CurrentTime.Month==dt)
+                .Select(d => new DayDTO()
+                {
+                    Id = d.Id,
+                    GoodsName = d.GoodsName,
+                    GoodsType = (GoodsType)d.GoodsType,
+                    GoodsPrice = d.GoodsPrice,
+                    DaysCast = d.DaysCast,
+                    TotalRemain = d.TotalRemain,
+                    CurrentTime = d.CurrentTime,
+                    State = d.State == 0 ? "正常" : "删除"
+                });
+            query = query.OrderBy(q=>q.CurrentTime).Skip((page - 1) * pagesize).Take(pagesize);
+            c.SaveChanges();
+            return query;
+        }
+
 
         public bool Delete(int id)
         {
             throw new NotImplementedException();
         }
 
-        public IQueryable<DayDTO> GetList()
+        /// <summary>
+        /// 获取日消费所有数据
+        /// </summary>
+        /// <returns></returns>
+        public IQueryable<DayDTO> GetList(int page, int pagesize)
         {
             DateTime start = DateTime.Parse($"{DateTime.Now.Year}.{DateTime.Now.Month}.{DateTime.Now.Day} 00:00:00");
             DateTime end = DateTime.Parse($"{DateTime.Now.Year}.{DateTime.Now.Month}.{DateTime.Now.Day} 23:59:59");
@@ -90,6 +80,7 @@ namespace SQLDAL
                             CurrentTime = d.CurrentTime,
                             State = d.State == 0 ? "正常" : "已退款",
                         };
+            query = query.OrderBy(d => d.CurrentTime).Skip((page - 1) * pagesize).Take(pagesize);
             return query;
         }
 
@@ -103,12 +94,11 @@ namespace SQLDAL
         /// </summary>
         /// <param name="time"></param>
         /// <returns>数据</returns>
-        public List<DayDTO> Select(string time)
+        public List<DayDTO> Select(DateTime time, int page, int pagesize)
         {
-            var query = from d in c.DayCastInfo
-                        //where d.CurrentTime.ToString("yyyy-MM-dd") == time
-                        orderby d.CurrentTime ascending
-                        select new DayDTO()
+            var query = c.DayCastInfo
+                        .Where(l => l.CurrentTime.Year == time.Year && l.CurrentTime.Month == time.Month && l.CurrentTime.Day == time.Day)
+                        .Select(d => new DayDTO()
                         {
                             Id = d.Id,
                             GoodsName = d.GoodsName,
@@ -118,49 +108,55 @@ namespace SQLDAL
                             TotalRemain = d.TotalRemain,
                             CurrentTime = d.CurrentTime,
                             State = d.State == 0 ? "正常" : "已退款",
-                        };
-            c.SaveChanges();
-            var list = query.ToList();
-            list = list.FindAll(l => l.CurrentTime.ToString("yyyy-MM-dd") == time);
+                        });
+
+            var list = query.OrderBy(d => d.CurrentTime).Skip((page-1)*pagesize).Take(pagesize).ToList();
             return list;
         }
 
-        public int TotalPage(int pageSize)
+
+        /// <summary>
+        /// 获取指定日期的总页数
+        /// </summary>
+        /// <param name="pageSize"></param>
+        /// <param name="time"></param>
+        /// <returns></returns>
+        public int TimeTotalPage(int pageSize, DateTime time)
         {
-            throw new NotImplementedException();
+            var query = c.DayCastInfo
+                        .Where(l => l.CurrentTime.Year == time.Year && l.CurrentTime.Month == time.Month && l.CurrentTime.Day == time.Day);
+            var list = query.ToList();
+            return (int)Math.Ceiling(list.Count / (double)pageSize);
+        }
+
+        /// <summary>
+        /// 获取总页数
+        /// </summary>
+        /// <param name="pageSize"></param>
+        /// <param name="t"></param>
+        /// <returns></returns>
+        public int TotalPage(int pageSize , int t)
+        {
+            DateTime start = DateTime.Parse($"{DateTime.Now.Year}.{DateTime.Now.Month}.{DateTime.Now.Day} 00:00:00");
+            DateTime end = DateTime.Parse($"{DateTime.Now.Year}.{DateTime.Now.Month}.{DateTime.Now.Day} 23:59:59");
+
+            var query = c.DayCastInfo.Where(d => d.GoodsType == t);
+            if (t == -1) query = c.DayCastInfo.Where(d=>d.CurrentTime >= start && d.CurrentTime<= end);
+            var list = query.ToList();   
+            return (int)Math.Ceiling(list.Count/ (double)pageSize);
         }
 
         public bool Update(params SqlParameter[] sqlParameters)
         {
             throw new NotImplementedException();
         }
+
+        /// <summary>
+        /// 获取最后一条数据
+        /// </summary>
+        /// <returns></returns>
         public DayCastInfo GetLastDayCost()
         {
-            #region dapper
-            //DayCost lastDayCost = null;
-
-            //using (SqlConnection sqlConnection = new SqlConnection(connectionString))
-            //{
-            //    string getLastDayCostSql = @"
-            //            SELECT TOP 1 
-            //                Id, 
-            //                GoodName, 
-            //                Type, 
-            //                Price, 
-            //                Time, 
-            //                TotalRemain, 
-            //                DaysCost, 
-            //                State
-            //            FROM DayCost
-            //            WHERE Time < GETDATE()
-            //            ORDER BY Time DESC;";
-
-            //    // 执行查询并映射结果
-            //    lastDayCost = sqlConnection.QuerySingleOrDefault<DayCost>(getLastDayCostSql);
-            //}
-
-            //return lastDayCost;
-            #endregion
             var lastRecord = c.DayCastInfo.OrderByDescending(x => x.Id).FirstOrDefault();
             return lastRecord;
         }

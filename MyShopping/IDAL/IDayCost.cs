@@ -1,4 +1,5 @@
-﻿using Maticsoft.Model;
+﻿using Domains.DTO;
+using Maticsoft.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace IDAL
     public interface IDayCost:IBase<DayCastInfo>
     {
         DayCastInfo GetLastDayCost();
+        IQueryable<DayDTO> GetTypeCast(int t, int page, int pagesize);
 
     }
 }

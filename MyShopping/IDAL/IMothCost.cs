@@ -16,6 +16,6 @@ namespace IDAL
         MothCastInfo GetCurrentMonth(int moth);
 
         bool Update(MothCastInfo model);
-        bool Add(MothCastInfo model);
+        bool Add();
     }
 }

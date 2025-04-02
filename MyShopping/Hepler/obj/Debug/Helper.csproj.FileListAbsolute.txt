@@ -1,6 +1,13 @@
 D:\上位机正式课\MyShopping1\MyShopping\Hepler\bin\Debug\Hepler.dll
 D:\上位机正式课\MyShopping1\MyShopping\Hepler\bin\Debug\Hepler.pdb
 D:\上位机正式课\MyShopping1\MyShopping\Hepler\obj\Debug\Helper.csproj.AssemblyReference.cache
+D:\上位机正式课\MyShopping1\MyShopping\Hepler\obj\Debug\Shopping.MyUserContorl.AddButton.resources
+D:\上位机正式课\MyShopping1\MyShopping\Hepler\obj\Debug\Hepler.MyUserContorl.LastPageButton.resources
+D:\上位机正式课\MyShopping1\MyShopping\Hepler\obj\Debug\Hepler.MyUserContorl.NextPageButton.resources
+D:\上位机正式课\MyShopping1\MyShopping\Hepler\obj\Debug\Shopping.MyUserContorl.UpdAndREFButton.resources
+D:\上位机正式课\MyShopping1\MyShopping\Hepler\obj\Debug\Shopping.MyUserContorl.PageButton.resources
+D:\上位机正式课\MyShopping1\MyShopping\Hepler\obj\Debug\Shopping.MyUserContorl.ReturnButon.resources
+D:\上位机正式课\MyShopping1\MyShopping\Hepler\obj\Debug\Helper.csproj.GenerateResource.cache
 D:\上位机正式课\MyShopping1\MyShopping\Hepler\obj\Debug\Helper.csproj.CoreCompileInputs.cache
 D:\上位机正式课\MyShopping1\MyShopping\Hepler\obj\Debug\Hepler.dll
 D:\上位机正式课\MyShopping1\MyShopping\Hepler\obj\Debug\Hepler.pdb

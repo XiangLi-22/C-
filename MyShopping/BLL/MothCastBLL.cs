@@ -3,22 +3,15 @@ using Hepler;
 using Maticsoft.Model;
 using SQLDAL;
 using System;
-using System.Collections.Generic;
-using System.Runtime.Remoting.Contexts;
 
 namespace BLL
 {
     public class MothCastBLL
     {
         MothCastDAL mothCastDAL = new MothCastDAL();
-        //public double GetTypeCouunt(int index)
-        //{
-        //    List<DayCastInfo> list = mothCastDAL.GetMothCosts();
-        //    return 1.0;
-        //}
 
         /// <summary>
-        /// 当添加日消费时,更新月消费
+        /// 当添加日消费时,更新月消费的方法
         /// </summary>
         /// <param name="type"></param>
         /// <param name="price"></param>
@@ -34,7 +27,7 @@ namespace BLL
             float oldValue = Convert.ToSingle(prop.GetValue(monthModel));
             prop.SetValue(monthModel, oldValue + price);
             mothCastDAL.Update(monthModel);
-        }
+        } 
 
         /// <summary>
         /// 获取每个类型的消费金额
@@ -59,6 +52,14 @@ namespace BLL
         {
             var moth = DateTime.Now.Month;
             return mothCastDAL.GetCurrentMonth(moth);
+        }
+
+        /// <summary>
+        /// 判断是否有初始数据,如果没有就添加新数据
+        /// </summary>
+        public void Add()
+        {
+            mothCastDAL.Add();
         }
 
     }

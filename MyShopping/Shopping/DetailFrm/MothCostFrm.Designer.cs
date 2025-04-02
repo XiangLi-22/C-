@@ -29,8 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.returnButon1 = new Shopping.MyUserContorl.ReturnButon();
             this.panel2 = new System.Windows.Forms.Panel();
             this.uiGroupBox1 = new Sunny.UI.UIGroupBox();
+            this.dtpSelTime = new Sunny.UI.UIDatePicker();
             this.lbShowType = new Sunny.UI.UIListBox();
             this.btnGoType = new Sunny.UI.UIButton();
             this.uiLabel2 = new Sunny.UI.UILabel();
@@ -38,8 +40,6 @@
             this.btnGoTime = new Sunny.UI.UIButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.uPieChart = new Sunny.UI.UIPieChart();
-            this.dtpSelTime = new Sunny.UI.UIDatePicker();
-            this.returnButon1 = new Shopping.MyUserContorl.ReturnButon();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.uiGroupBox1.SuspendLayout();
@@ -56,6 +56,14 @@
             this.panel1.Size = new System.Drawing.Size(1382, 100);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // returnButon1
+            // 
+            this.returnButon1.Location = new System.Drawing.Point(23, 20);
+            this.returnButon1.Name = "returnButon1";
+            this.returnButon1.Size = new System.Drawing.Size(60, 60);
+            this.returnButon1.TabIndex = 0;
+            this.returnButon1.Click += new System.EventHandler(this.returnButon1_Click);
             // 
             // panel2
             // 
@@ -91,6 +99,26 @@
             this.uiGroupBox1.Text = "查询条件";
             this.uiGroupBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // dtpSelTime
+            // 
+            this.dtpSelTime.FillColor = System.Drawing.Color.White;
+            this.dtpSelTime.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dtpSelTime.Location = new System.Drawing.Point(71, 46);
+            this.dtpSelTime.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dtpSelTime.MaxLength = 10;
+            this.dtpSelTime.MinimumSize = new System.Drawing.Size(63, 0);
+            this.dtpSelTime.Name = "dtpSelTime";
+            this.dtpSelTime.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
+            this.dtpSelTime.Size = new System.Drawing.Size(150, 29);
+            this.dtpSelTime.SymbolDropDown = 61555;
+            this.dtpSelTime.SymbolNormal = 61555;
+            this.dtpSelTime.SymbolSize = 24;
+            this.dtpSelTime.TabIndex = 1;
+            this.dtpSelTime.Text = "2025-03-29";
+            this.dtpSelTime.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dtpSelTime.Value = new System.DateTime(2025, 3, 29, 9, 27, 2, 248);
+            this.dtpSelTime.Watermark = "";
+            // 
             // lbShowType
             // 
             this.lbShowType.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -121,7 +149,7 @@
             this.btnGoType.Name = "btnGoType";
             this.btnGoType.Size = new System.Drawing.Size(100, 35);
             this.btnGoType.TabIndex = 2;
-            this.btnGoType.Text = "uiButton2";
+            this.btnGoType.Text = "查询类型";
             this.btnGoType.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnGoType.Click += new System.EventHandler(this.btnGoType_Click);
             // 
@@ -154,7 +182,7 @@
             this.btnGoTime.Name = "btnGoTime";
             this.btnGoTime.Size = new System.Drawing.Size(100, 35);
             this.btnGoTime.TabIndex = 1;
-            this.btnGoTime.Text = "uiButton1";
+            this.btnGoTime.Text = "查询日期";
             this.btnGoTime.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnGoTime.Click += new System.EventHandler(this.btnGoTime_Click);
             // 
@@ -183,35 +211,6 @@
             this.uPieChart.SubFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uPieChart.TabIndex = 0;
             this.uPieChart.Text = "uiPieChart1";
-            // 
-            // dtpSelTime
-            // 
-            this.dtpSelTime.FillColor = System.Drawing.Color.White;
-            this.dtpSelTime.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dtpSelTime.Location = new System.Drawing.Point(71, 46);
-            this.dtpSelTime.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dtpSelTime.MaxLength = 10;
-            this.dtpSelTime.MinimumSize = new System.Drawing.Size(63, 0);
-            this.dtpSelTime.Name = "dtpSelTime";
-            this.dtpSelTime.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
-            this.dtpSelTime.Size = new System.Drawing.Size(150, 29);
-            this.dtpSelTime.SymbolDropDown = 61555;
-            this.dtpSelTime.SymbolNormal = 61555;
-            this.dtpSelTime.SymbolSize = 24;
-            this.dtpSelTime.TabIndex = 1;
-            this.dtpSelTime.Text = "2025-03-29";
-            this.dtpSelTime.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dtpSelTime.Value = new System.DateTime(2025, 3, 29, 9, 27, 2, 248);
-            this.dtpSelTime.Watermark = "";
-            this.dtpSelTime.DropDownClosed += new System.EventHandler(this.dtpSelTime_DropDownClosed_1);
-            // 
-            // returnButon1
-            // 
-            this.returnButon1.Location = new System.Drawing.Point(23, 20);
-            this.returnButon1.Name = "returnButon1";
-            this.returnButon1.Size = new System.Drawing.Size(60, 60);
-            this.returnButon1.TabIndex = 0;
-            this.returnButon1.Click += new System.EventHandler(this.returnButon1_Click);
             // 
             // MothCostFrm
             // 
@@ -248,7 +247,7 @@
         private Sunny.UI.UILabel uiLabel1;
         private Sunny.UI.UILabel uiLabel2;
         private Sunny.UI.UIListBox lbShowType;
-        private MyUserContorl.ReturnButon returnButon1;
         private Sunny.UI.UIDatePicker dtpSelTime;
+        private MyUserContorl.ReturnButon returnButon1;
     }
 }

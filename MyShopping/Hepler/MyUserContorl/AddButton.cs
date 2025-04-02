@@ -20,7 +20,8 @@
                 InitializeComponent();
             }
 
-            static string path = @"D:\上位机正式课\MyShopping\Shopping\加.png";
+            //static string path = Path.Combine(Environment.CurrentDirectory, @"..\..\image\加.png");
+            static string path = @"D:\上位机正式课\MyShopping1\MyShopping\Shopping\image\加.png";
             Image image = Image.FromFile(path);
 
             static bool isMouseOver = false;

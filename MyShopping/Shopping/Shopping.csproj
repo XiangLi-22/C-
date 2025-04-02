@@ -69,6 +69,7 @@
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -92,41 +93,35 @@
     <Compile Include="DetailFrm\MothCostFrm.Designer.cs">
       <DependentUpon>MothCostFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DetailFrm\TypeFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetailFrm\TypeFrm.Designer.cs">
+      <DependentUpon>TypeFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DetailFrm\YearCostFrm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DetailFrm\YearCostFrm.Designer.cs">
       <DependentUpon>YearCostFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DetailFrm\YearMothFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetailFrm\YearMothFrm.Designer.cs">
+      <DependentUpon>YearMothFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DetailFrm\YearTypeFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetailFrm\YearTypeFrm.Designer.cs">
+      <DependentUpon>YearTypeFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainFrm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainFrm.Designer.cs">
       <DependentUpon>MainFrm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MyUserContorl\AddButton.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="MyUserContorl\AddButton.Designer.cs">
-      <DependentUpon>AddButton.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MyUserContorl\DelectButton.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="MyUserContorl\DelectButton.Designer.cs">
-      <DependentUpon>DelectButton.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MyUserContorl\ReturnButon.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="MyUserContorl\ReturnButon.Designer.cs">
-      <DependentUpon>ReturnButon.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MyUserContorl\TurnPageButton.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="MyUserContorl\TurnPageButton.Designer.cs">
-      <DependentUpon>TurnPageButton.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -136,17 +131,20 @@
     <EmbeddedResource Include="DetailFrm\MothCostFrm.resx">
       <DependentUpon>MothCostFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DetailFrm\TypeFrm.resx">
+      <DependentUpon>TypeFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetailFrm\YearCostFrm.resx">
+      <DependentUpon>YearCostFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetailFrm\YearMothFrm.resx">
+      <DependentUpon>YearMothFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetailFrm\YearTypeFrm.resx">
+      <DependentUpon>YearTypeFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainFrm.resx">
       <DependentUpon>MainFrm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MyUserContorl\AddButton.resx">
-      <DependentUpon>AddButton.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MyUserContorl\DelectButton.resx">
-      <DependentUpon>DelectButton.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MyUserContorl\ReturnButon.resx">
-      <DependentUpon>ReturnButon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

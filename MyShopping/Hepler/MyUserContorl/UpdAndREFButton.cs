@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace Shopping.MyUserContorl
 {
-    public partial class DelectButton : UserControl
+    public partial class UpdAndREFButton : UserControl
     {
         public event EventHandler btnUpdClicked;
         public event EventHandler btnRefClicked;
-        public DelectButton()
+        public UpdAndREFButton()
         {
             InitializeComponent();
         }
