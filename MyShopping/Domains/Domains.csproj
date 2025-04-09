@@ -66,6 +66,14 @@
     <Compile Include="Migrations\202503281213447_update-userinfo11.Designer.cs">
       <DependentUpon>202503281213447_update-userinfo11.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202504060759304_InitialCreate.cs" />
+    <Compile Include="Migrations\202504060759304_InitialCreate.Designer.cs">
+      <DependentUpon>202504060759304_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202504081254137_InitialCreate1.cs" />
+    <Compile Include="Migrations\202504081254137_InitialCreate1.Designer.cs">
+      <DependentUpon>202504081254137_InitialCreate1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MothCastInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -84,6 +92,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202503281213447_update-userinfo11.resx">
       <DependentUpon>202503281213447_update-userinfo11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202504060759304_InitialCreate.resx">
+      <DependentUpon>202504060759304_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202504081254137_InitialCreate1.resx">
+      <DependentUpon>202504081254137_InitialCreate1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -25,8 +25,10 @@ D:\上位机正式课\MyShopping1\MyShopping\Domains\obj\Debug\Domains.csproj.As
 D:\上位机正式课\MyShopping1\MyShopping\Domains\obj\Debug\Domains.Migrations.Init.resources
 D:\上位机正式课\MyShopping1\MyShopping\Domains\obj\Debug\Domains.Migrations.updateuserinfo.resources
 D:\上位机正式课\MyShopping1\MyShopping\Domains\obj\Debug\Domains.Migrations.updateuserinfo11.resources
+D:\上位机正式课\MyShopping1\MyShopping\Domains\obj\Debug\Domains.Migrations.InitialCreate.resources
 D:\上位机正式课\MyShopping1\MyShopping\Domains\obj\Debug\Domains.csproj.GenerateResource.cache
 D:\上位机正式课\MyShopping1\MyShopping\Domains\obj\Debug\Domains.csproj.CoreCompileInputs.cache
 D:\上位机正式课\MyShopping1\MyShopping\Domains\obj\Debug\Domains.csproj.Up2Date
 D:\上位机正式课\MyShopping1\MyShopping\Domains\obj\Debug\Domains.dll
 D:\上位机正式课\MyShopping1\MyShopping\Domains\obj\Debug\Domains.pdb
+D:\上位机正式课\MyShopping1\MyShopping\Domains\obj\Debug\Domains.Migrations.InitialCreate1.resources

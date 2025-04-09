@@ -22,12 +22,13 @@ namespace BLL
             message = string.Empty;
             var l = yearCastDAL.GetMothCost(year);
             var list = new List<float>();
-            for (int i = 0; i < l.Count; i++){
-                if (l[i]<0)
+            for (int i = 0; i < l.Count; i++)
+            {
+                if (l[i] == 0)
                 {
-                    list.Add(Math.Abs(l[i])+1500);
+                    continue;
                 }
-                list.Add(1500-l[i]);
+                list.Add(l[i]);
             }
             if (list.Count == 0) message = $"{year}年没有消费记录!";
             return list;

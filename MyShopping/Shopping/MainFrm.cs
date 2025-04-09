@@ -1,6 +1,7 @@
 ﻿using BLL;
 using Maticsoft.Model;
 using Shopping.DetailImage;
+using Shopping.SubFrm;
 using Sunny.UI;
 using System;
 using System.Drawing;
@@ -15,19 +16,22 @@ namespace Shopping
         DayCastBLL dayCastBLL = new DayCastBLL();
         MothCastBLL mothCastBLL = new MothCastBLL();
 
-        static float totalMoney = 1500;  //总限额
+        static float totalMoney = 2000;  //总限额
 
         static float money;       //历史消费=总限额 - 剩余金额
 
         static float remainMoney;   //剩余金额
+
+        static float refundMoney;  //退款金额
 
         string message = string.Empty;
 
         public MainFrm()
         {
             InitializeComponent();
-            remainMoney = mothCastBLL.GetCurrentMonth().TotalRemain;
+            remainMoney = dayCastBLL.GetLastRemainMoney();
             money = totalMoney - remainMoney;
+            refundMoney = mothCastBLL.GetMothRefundMoney();
         }
 
         #region 窗体事件
@@ -36,26 +40,15 @@ namespace Shopping
             string path = Path.Combine(Environment.CurrentDirectory, @"..\..\image\aaa.gif");
             pictureBox1.Image = Image.FromFile(path);
             BindDoughnutChart();
+            timer1.Start();
+        }
+
+        private void MainFrm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            timer1.Stop();
+            timer1.Dispose();
         }
         #endregion
-
-
-        private void myButton1_Click(object sender, EventArgs e)
-        {
-            var model = new DayCastInfo()
-            {
-                GoodsName = "午餐",
-                GoodsType = 1,
-                GoodsPrice = 10,
-                //CurrentTime = DateTime.Parse("2025.3.26")
-            };
-            dayCastBLL.Add(model, out message);
-            money = money + model.GoodsPrice;
-            remainMoney = totalMoney - money;
-            if (!string.IsNullOrWhiteSpace(message))
-                MessageBox.Show(message);
-            BindDoughnutChart();
-        }
 
         #region 数据绑定
         private void BindDoughnutChart()
@@ -81,6 +74,7 @@ namespace Shopping
             else option.Legend.AddData("剩余金额");
             if (money >= totalMoney) option.Legend.AddData("消费金额", Color.Red);
             else option.Legend.AddData("消费金额", Color.Gold);
+            option.Legend.AddData("退款金额");
 
 
             //设置Series
@@ -97,13 +91,14 @@ namespace Shopping
             else series.AddData("剩余金额", remainMoney);
             if (money >= totalMoney) series.AddData("消费金额", money, Color.Red);
             else series.AddData("消费金额", money, Color.Gold);
+            series.AddData("退款金额", refundMoney);
 
             //增加Series
             option.Series.Clear();
             option.Series.Add(series);
 
             //显示数据小数位数
-            option.DecimalPlaces = 1;
+            option.DecimalPlaces = 2;
 
             //设置Option
             uiDoughnutChart1.SetOption(option);
@@ -173,8 +168,51 @@ namespace Shopping
             yearCostFrm.Show();
             this.Hide();
         }
+
         #endregion
 
+        #region 添加退款按钮
+        private void myButton1_Click(object sender, EventArgs e)
+        {
 
+            //在AddUpdFrm中添加,添加完成后,返回一个商品的价格
+            AddUpdFrm addUpdFrm = new AddUpdFrm(this);
+
+            if (addUpdFrm.ShowDialog() == DialogResult.OK)
+            {
+                money = money + addUpdFrm.goodsPrice;
+                remainMoney = totalMoney - money;
+            }
+
+            BindDoughnutChart();
+        }
+        private void refundButton1_Click(object sender, EventArgs e)
+        {
+            RefundFrm refundFrm = new RefundFrm();
+            refundFrm.Show();
+            BindDoughnutChart();
+        }
+        #endregion
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Console.WriteLine("成功!");
+            remainMoney = dayCastBLL.GetLastRemainMoney();
+            money = totalMoney - remainMoney;
+            refundMoney = mothCastBLL.GetMothRefundMoney(); //这里没有更新的愿意可能是月消费中没有更新,检查月消费
+            // 确保在 UI 线程中调用 BindDoughnutChart
+            if (this.InvokeRequired)
+            {
+                // 使用 Invoke 调用 BindDoughnutChart
+                this.Invoke(new Action(BindDoughnutChart));
+            }
+            else
+            {
+                // 如果已经在 UI 线程中，直接调用
+                BindDoughnutChart();
+            }
+        }
+
+        
     }
 }

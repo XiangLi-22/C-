@@ -50,7 +50,7 @@ namespace SQLDAL
                 var newModel = new MothCastInfo
                 {
                     CurrentTime = DateTime.Now,
-                    TotalRemain = 1500 // 如果你有默认值，也可以改
+                    TotalRemain = 2000 // 如果你有默认值，也可以改
                 };
                 context.MothCastInfo.Add(newModel);
                 context.SaveChanges();
@@ -87,8 +87,35 @@ namespace SQLDAL
         /// <returns></returns>
         public MothCastInfo GetCurrentMonth(int moth)
         {
-            var query = context.MothCastInfo.Where(m=>m.CurrentTime.Month==moth);
-            return query.FirstOrDefault();
+            var query = context.MothCastInfo.FirstOrDefault(m=>m.CurrentTime.Month==moth);
+            return query;
+        }
+
+        /// <summary>
+        /// 对指定的商品进行退款 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public bool Delete(float price)
+        {
+            //记录指定数据的价格, 对当月消费的退款金额增加,不改变其他的价格
+            int month = DateTime.Now.Month;
+            MothCastInfo model = context.MothCastInfo.First(m => m.CurrentTime.Month == month);
+            model.RefundMoney += price;
+            int count = context.SaveChanges();
+            return count > 0;
+        }
+
+        /// <summary>
+        /// 获取本月的退款金额
+        /// </summary>
+        /// <returns></returns>
+        public float GetMothRefundMoney()
+        {
+            int month = DateTime.Now.Month;
+            MothCastInfo model = context.MothCastInfo.First(m => m.CurrentTime.Month == month);
+            return model.RefundMoney;
         }
     }
 }

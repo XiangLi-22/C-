@@ -76,6 +76,8 @@ D:\上位机正式课\MyShopping1\MyShopping\Shopping\bin\Debug\System.Threading
 D:\上位机正式课\MyShopping1\MyShopping\Shopping\obj\Debug\Shopping.csproj.AssemblyReference.cache
 D:\上位机正式课\MyShopping1\MyShopping\Shopping\obj\Debug\Shopping.DetailImage.DayCostFrm.resources
 D:\上位机正式课\MyShopping1\MyShopping\Shopping\obj\Debug\Shopping.DetailImage.MothCostFrm.resources
+D:\上位机正式课\MyShopping1\MyShopping\Shopping\obj\Debug\Shopping.SubFrm.AddUpdFrm.resources
+D:\上位机正式课\MyShopping1\MyShopping\Shopping\obj\Debug\Shopping.SubFrm.RefundFrm.resources
 D:\上位机正式课\MyShopping1\MyShopping\Shopping\obj\Debug\Shopping.DetailFrm.TypeFrm.resources
 D:\上位机正式课\MyShopping1\MyShopping\Shopping\obj\Debug\Shopping.DetailImage.YearCostFrm.resources
 D:\上位机正式课\MyShopping1\MyShopping\Shopping\obj\Debug\Shopping.DetailFrm.YearMothFrm.resources

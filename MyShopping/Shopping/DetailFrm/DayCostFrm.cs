@@ -1,5 +1,4 @@
 ﻿using BLL;
-using Domains.Context;
 using Helper;
 using Hepler;
 using Shopping.MyUserContorl;
@@ -18,6 +17,7 @@ namespace Shopping.DetailImage
         public DateTime Time;
 
         DayCastBLL dayCastBLL = new DayCastBLL();
+        MothCastBLL mothCastBLL = new MothCastBLL();
         string message = string.Empty;
 
         int page = 1;
@@ -102,10 +102,17 @@ namespace Shopping.DetailImage
 
                 button.btnRefClicked += (s, e) =>
                 {
-                    MessageBox.Show("退款按钮点击");
+                    float price = dayCastBLL.Delete(id);
+                    mothCastBLL.Delete(price);
+                    BindGridView();
+                    BindTimeGridView();
                 };
                 button.btnUpdClicked += (s, e) =>
                 {
+                    //编辑:
+                    //只能更改名字和类型
+                    //类型是改变月消费的类型价格
+
                     MessageBox.Show($"编辑按钮点击，ID: {id}");
                 };
                 return button;

@@ -65,6 +65,12 @@
     <Compile Include="MyUserContorl\NextPageButton.Designer.cs">
       <DependentUpon>NextPageButton.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyUserContorl\RefundButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserContorl\RefundButton.Designer.cs">
+      <DependentUpon>RefundButton.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyUserContorl\UpdAndREFButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserContorl\NextPageButton.resx">
       <DependentUpon>NextPageButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserContorl\RefundButton.resx">
+      <DependentUpon>RefundButton.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserContorl\UpdAndREFButton.resx">
       <DependentUpon>UpdAndREFButton.cs</DependentUpon>

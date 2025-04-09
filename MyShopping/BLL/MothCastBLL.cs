@@ -62,5 +62,23 @@ namespace BLL
             mothCastDAL.Add();
         }
 
+        /// <summary>
+        /// 获取本月的退款金额
+        /// </summary>
+        /// <returns></returns>
+        public float GetMothRefundMoney()
+        {
+            return mothCastDAL.GetMothRefundMoney();
+        }
+
+        /// <summary>
+        /// 对指定的商品进行退款
+        /// </summary>
+        /// <param name="price"></param>
+        /// <returns></returns>
+        public void Delete(float price)
+        {
+            mothCastDAL.Delete(price);
+        }
     }
 }

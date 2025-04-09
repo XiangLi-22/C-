@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.uiDoughnutChart1 = new Sunny.UI.UIDoughnutChart();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -35,7 +36,9 @@
             this.uiButton2 = new Sunny.UI.UIButton();
             this.uiButton3 = new Sunny.UI.UIButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.refundButton1 = new Hepler.MyUserContorl.RefundButton();
             this.myButton1 = new Shopping.MyUserContorl.AddButton();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -113,20 +116,35 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(827, 453);
+            this.pictureBox1.Location = new System.Drawing.Point(851, 459);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(219, 188);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
+            // 
+            // refundButton1
+            // 
+            this.refundButton1.Location = new System.Drawing.Point(1165, 427);
+            this.refundButton1.Name = "refundButton1";
+            this.refundButton1.Size = new System.Drawing.Size(100, 100);
+            this.refundButton1.TabIndex = 11;
+            this.refundButton1.Click += new System.EventHandler(this.refundButton1_Click);
             // 
             // myButton1
             // 
-            this.myButton1.Location = new System.Drawing.Point(1165, 325);
+            this.myButton1.Location = new System.Drawing.Point(1165, 293);
             this.myButton1.Name = "myButton1";
             this.myButton1.Size = new System.Drawing.Size(100, 100);
             this.myButton1.TabIndex = 9;
             this.myButton1.Click += new System.EventHandler(this.myButton1_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // MainFrm
             // 
@@ -134,6 +152,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1382, 653);
+            this.Controls.Add(this.refundButton1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.myButton1);
             this.Controls.Add(this.uiButton3);
@@ -148,6 +167,7 @@
             this.Name = "MainFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MyShopping";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainFrm_FormClosing);
             this.Load += new System.EventHandler(this.MainFrm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -164,6 +184,8 @@
         private Sunny.UI.UIButton uiButton3;
         private MyUserContorl.AddButton myButton1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private Hepler.MyUserContorl.RefundButton refundButton1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

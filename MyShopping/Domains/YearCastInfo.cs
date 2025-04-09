@@ -9,7 +9,7 @@ namespace Maticsoft.Model
         public YearCastInfo()
         { }
         #region Model
-        [Key,DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [Required]
@@ -17,6 +17,9 @@ namespace Maticsoft.Model
 
         [Required]
         public float Cast { get; set; }
+
+        [Required]
+        public DateTime CurrentTime { get; set; }
         #endregion Model
 
     }

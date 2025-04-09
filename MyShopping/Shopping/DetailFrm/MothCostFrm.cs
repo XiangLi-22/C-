@@ -99,7 +99,7 @@ namespace Shopping.DetailImage
             option.Series.Add(series);
 
             //显示数据的小数个数
-            //option.DecimalPlaces = 1;
+            option.DecimalPlaces = 2;
 
             //option绑定
             uPieChart.SetOption(option);

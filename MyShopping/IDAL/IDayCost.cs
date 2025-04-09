@@ -10,7 +10,8 @@ namespace IDAL
 {
     public interface IDayCost:IBase<DayCastInfo>
     {
-        DayCastInfo GetLastDayCost();
+        DayCastInfo GetLastDayCost(DateTime time);
+        float GetTotalRemain();
         IQueryable<DayDTO> GetTypeCast(int t, int page, int pagesize);
 
     }

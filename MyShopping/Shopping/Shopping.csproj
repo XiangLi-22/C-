@@ -93,10 +93,22 @@
     <Compile Include="DetailFrm\MothCostFrm.Designer.cs">
       <DependentUpon>MothCostFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DetailFrm\TypeFrm.cs">
+    <Compile Include="SubFrm\AddUpdFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DetailFrm\TypeFrm.Designer.cs">
+    <Compile Include="SubFrm\AddUpdFrm.Designer.cs">
+      <DependentUpon>AddUpdFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubFrm\RefundFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubFrm\RefundFrm.Designer.cs">
+      <DependentUpon>RefundFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubFrm\TypeFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubFrm\TypeFrm.Designer.cs">
       <DependentUpon>TypeFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="DetailFrm\YearCostFrm.cs">
@@ -105,16 +117,16 @@
     <Compile Include="DetailFrm\YearCostFrm.Designer.cs">
       <DependentUpon>YearCostFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DetailFrm\YearMothFrm.cs">
+    <Compile Include="SubFrm\YearMothFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DetailFrm\YearMothFrm.Designer.cs">
+    <Compile Include="SubFrm\YearMothFrm.Designer.cs">
       <DependentUpon>YearMothFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DetailFrm\YearTypeFrm.cs">
+    <Compile Include="SubFrm\YearTypeFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DetailFrm\YearTypeFrm.Designer.cs">
+    <Compile Include="SubFrm\YearTypeFrm.Designer.cs">
       <DependentUpon>YearTypeFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainFrm.cs">
@@ -131,16 +143,22 @@
     <EmbeddedResource Include="DetailFrm\MothCostFrm.resx">
       <DependentUpon>MothCostFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DetailFrm\TypeFrm.resx">
+    <EmbeddedResource Include="SubFrm\AddUpdFrm.resx">
+      <DependentUpon>AddUpdFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubFrm\RefundFrm.resx">
+      <DependentUpon>RefundFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubFrm\TypeFrm.resx">
       <DependentUpon>TypeFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DetailFrm\YearCostFrm.resx">
       <DependentUpon>YearCostFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DetailFrm\YearMothFrm.resx">
+    <EmbeddedResource Include="SubFrm\YearMothFrm.resx">
       <DependentUpon>YearMothFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DetailFrm\YearTypeFrm.resx">
+    <EmbeddedResource Include="SubFrm\YearTypeFrm.resx">
       <DependentUpon>YearTypeFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainFrm.resx">

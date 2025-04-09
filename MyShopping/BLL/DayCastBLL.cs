@@ -56,12 +56,12 @@ namespace BLL
             m.GoodsType = model.GoodsType;
             m.GoodsPrice = model.GoodsPrice;
             m.CurrentTime = model.CurrentTime == null ? DateTime.Now : model.CurrentTime;
-            if (dayCastDAL.GetLastDayCost()!=null && 
-                dayCastDAL.GetLastDayCost().CurrentTime.Month == m.CurrentTime.Month && 
-                dayCastDAL.GetLastDayCost().CurrentTime.Day == m.CurrentTime.Day)
-                m.DaysCast = dayCastDAL.GetLastDayCost().DaysCast + model.GoodsPrice;
+            if (dayCastDAL.GetLastDayCost(m.CurrentTime) !=null && 
+                dayCastDAL.GetLastDayCost(m.CurrentTime).CurrentTime.Month == m.CurrentTime.Month && 
+                dayCastDAL.GetLastDayCost(m.CurrentTime).CurrentTime.Day == m.CurrentTime.Day)
+                m.DaysCast = dayCastDAL.GetLastDayCost(m.CurrentTime).DaysCast + model.GoodsPrice;
             else m.DaysCast = model.GoodsPrice;
-            m.TotalRemain = dayCastDAL.GetLastDayCost()==null?1500:dayCastDAL.GetLastDayCost().TotalRemain - model.GoodsPrice;
+            m.TotalRemain = dayCastDAL.GetTotalRemain() == 2000 ? 2000 : dayCastDAL.GetTotalRemain() - model.GoodsPrice;
 
             if (!dayCastDAL.Add(m))
             {
@@ -71,18 +71,15 @@ namespace BLL
             MothCastBLL mothCastBLL = new MothCastBLL();
             mothCastBLL.MothAdd(m.GoodsType, m.GoodsPrice);
 
-            message = "添加成功!";
         }
 
         /// <summary>
-        /// 获取上一条数据的剩余金额
+        /// 获取本月的剩余金额
         /// </summary>
         /// <returns></returns>
         public float GetLastRemainMoney()
         {
-            if(dayCastDAL.GetLastDayCost()==null) return 1500;
-
-            return dayCastDAL.GetLastDayCost().TotalRemain;
+            return dayCastDAL.GetTotalRemain();
         }
 
         /// <summary>
@@ -122,5 +119,18 @@ namespace BLL
         {
             return dayCastDAL.TimeTotalPage(pageSize, time);
         }
+
+        /// <summary>
+        /// 对指定的商品进行退款
+        /// </summary>
+        /// <param name="id"></param>
+        public float Delete(int id)
+        {
+            //找到当日消费的指定数据,由id找,将状态改成已退款,并且颜色为蓝色
+            float price = dayCastDAL.Delete(id);
+            return price;
+        }
+
+
     }
 }

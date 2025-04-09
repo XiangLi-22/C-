@@ -74,7 +74,9 @@ namespace Maticsoft.Model
         [Required]
         public DateTime CurrentTime { get; set; }
 
-        
+        [Required]
+        public float RefundMoney { get; set; } = 0; //退款金额
+
         #endregion Model
 
     }
