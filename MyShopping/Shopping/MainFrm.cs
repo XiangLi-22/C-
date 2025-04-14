@@ -1,12 +1,10 @@
 ﻿using BLL;
-using Maticsoft.Model;
 using Shopping.DetailImage;
 using Shopping.SubFrm;
 using Sunny.UI;
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.IO;
 using System.Windows.Forms;
 
 namespace Shopping
@@ -22,10 +20,13 @@ namespace Shopping
 
         static float remainMoney;   //剩余金额
 
-        static float refundMoney;  //退款金额
+        public static float refundMoney;  //退款金额
 
         string message = string.Empty;
 
+        Timer timer;
+
+        public static bool IsRefund = false;
         public MainFrm()
         {
             InitializeComponent();
@@ -37,21 +38,32 @@ namespace Shopping
         #region 窗体事件
         private void MainFrm_Load(object sender, EventArgs e)
         {
-            string path = Path.Combine(Environment.CurrentDirectory, @"..\..\image\aaa.gif");
-            pictureBox1.Image = Image.FromFile(path);
             BindDoughnutChart();
-            timer1.Start();
+
+            timer = new Timer();
+            timer.Interval = 1000;
+            timer.Tick += Timer_Tick;
+            timer.Start();
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            if (IsRefund)
+            {
+                BindDoughnutChart();
+                IsRefund = false;
+            }
         }
 
         private void MainFrm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            timer1.Stop();
-            timer1.Dispose();
+            timer.Stop();
+            timer.Dispose();
         }
         #endregion
 
         #region 数据绑定
-        private void BindDoughnutChart()
+        public void BindDoughnutChart()
         {
             var option = new UIDoughnutOption();
 
@@ -194,24 +206,6 @@ namespace Shopping
         }
         #endregion
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            Console.WriteLine("成功!");
-            remainMoney = dayCastBLL.GetLastRemainMoney();
-            money = totalMoney - remainMoney;
-            refundMoney = mothCastBLL.GetMothRefundMoney(); //这里没有更新的愿意可能是月消费中没有更新,检查月消费
-            // 确保在 UI 线程中调用 BindDoughnutChart
-            if (this.InvokeRequired)
-            {
-                // 使用 Invoke 调用 BindDoughnutChart
-                this.Invoke(new Action(BindDoughnutChart));
-            }
-            else
-            {
-                // 如果已经在 UI 线程中，直接调用
-                BindDoughnutChart();
-            }
-        }
 
         
     }

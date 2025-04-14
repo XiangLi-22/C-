@@ -68,6 +68,7 @@ namespace SQLDAL
             return d.GoodsPrice;
         }
 
+
         /// <summary>
         /// 获取日消费所有数据
         /// </summary>

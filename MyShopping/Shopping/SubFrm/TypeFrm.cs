@@ -89,10 +89,8 @@ namespace Shopping.DetailFrm
                         float price = dayCastBLL.Delete(id);
                         mothCastBLL.Delete(price);
                         BindDataGirdView();
-                    };
-                    button.btnUpdClicked += (s, e) =>
-                    {
-                        MessageBox.Show("编辑");
+                        MainFrm.refundMoney += price;
+                        MainFrm.IsRefund = true;
                     };
                     return button;
                 });

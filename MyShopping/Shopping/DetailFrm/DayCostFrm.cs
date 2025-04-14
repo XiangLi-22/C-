@@ -12,7 +12,7 @@ namespace Shopping.DetailImage
 {
     public partial class DayCostFrm : Form
     {
-        public Form MainFrm;
+        public Form mainFrm;
         public bool IsSelect = false;
         public DateTime Time;
 
@@ -29,7 +29,7 @@ namespace Shopping.DetailImage
         public DayCostFrm(Form mainFrm = null, bool isSelect = false, DateTime time = default)
         {
             InitializeComponent();
-            MainFrm = mainFrm;
+            this.mainFrm = mainFrm;
             this.IsSelect = isSelect;
             this.Time = time;
         }
@@ -104,16 +104,12 @@ namespace Shopping.DetailImage
                 {
                     float price = dayCastBLL.Delete(id);
                     mothCastBLL.Delete(price);
-                    BindGridView();
-                    BindTimeGridView();
-                };
-                button.btnUpdClicked += (s, e) =>
-                {
-                    //编辑:
-                    //只能更改名字和类型
-                    //类型是改变月消费的类型价格
 
-                    MessageBox.Show($"编辑按钮点击，ID: {id}");
+                    if (!IsSelect) BindGridView();
+                    else BindTimeGridView();
+
+                    MainFrm.refundMoney += price;
+                    MainFrm.IsRefund = true;
                 };
                 return button;
             });
@@ -155,7 +151,7 @@ namespace Shopping.DetailImage
         private void returnButon1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            MainFrm.Show();
+            mainFrm.Show();
         }
 
 

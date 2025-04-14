@@ -28,46 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnUpd = new System.Windows.Forms.Button();
             this.btnRef = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnUpd
-            // 
-            this.btnUpd.Location = new System.Drawing.Point(3, 3);
-            this.btnUpd.Name = "btnUpd";
-            this.btnUpd.Size = new System.Drawing.Size(48, 25);
-            this.btnUpd.TabIndex = 0;
-            this.btnUpd.Text = "编辑";
-            this.btnUpd.UseVisualStyleBackColor = true;
-            this.btnUpd.Click += new System.EventHandler(this.btnUpd_Click);
-            // 
             // btnRef
             // 
-            this.btnRef.Location = new System.Drawing.Point(52, 3);
+            this.btnRef.Location = new System.Drawing.Point(24, 3);
             this.btnRef.Name = "btnRef";
-            this.btnRef.Size = new System.Drawing.Size(48, 25);
+            this.btnRef.Size = new System.Drawing.Size(55, 25);
             this.btnRef.TabIndex = 1;
             this.btnRef.Text = "退款";
             this.btnRef.UseVisualStyleBackColor = true;
             this.btnRef.Click += new System.EventHandler(this.btnRef_Click);
             // 
-            // DelectButton
+            // UpdAndREFButton
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.btnRef);
-            this.Controls.Add(this.btnUpd);
-            this.Name = "DelectButton";
+            this.Name = "UpdAndREFButton";
             this.Size = new System.Drawing.Size(103, 30);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnUpd;
         private System.Windows.Forms.Button btnRef;
     }
 }
